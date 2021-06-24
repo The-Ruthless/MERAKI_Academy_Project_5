@@ -1,7 +1,4 @@
 
-
-
-
 DROP DATABASE trading_website;
 
 CREATE DATABASE trading_website;
