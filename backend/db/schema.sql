@@ -74,7 +74,7 @@ CREATE TABLE cars (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 
 
 
@@ -107,7 +107,7 @@ CREATE TABLE motorbikes (
   PRIMARY KEY (id),
 
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -134,7 +134,7 @@ CREATE TABLE laptops (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -155,9 +155,10 @@ CREATE TABLE mobile_phones (
   cond VARCHAR(255),
   location VARCHAR(255),
   catergory_id INT,
+  user_id INT,
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -181,7 +182,7 @@ CREATE TABLE televisions (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -205,7 +206,7 @@ CREATE TABLE sun_glasses (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -229,7 +230,7 @@ CREATE TABLE watches (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 
 );
 
@@ -254,7 +255,7 @@ CREATE TABLE cats (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE dogs (
@@ -277,7 +278,7 @@ CREATE TABLE dogs (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -301,7 +302,7 @@ CREATE TABLE birds (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -323,7 +324,7 @@ CREATE TABLE wardrobes (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
@@ -347,7 +348,7 @@ CREATE TABLE beds (
 
   PRIMARY KEY (id),
   FOREIGN KEY (catergory_id) REFERENCES main_categories(id),
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
