@@ -226,3 +226,155 @@ CREATE TABLE sun_glasses (
   FOREIGN KEY (accessories_id) REFERENCES accessories(id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+CREATE TABLE watches (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  title VARCHAR(255),
+  description VARCHAR(4000),
+  image VARCHAR(255),
+  price INT,
+  phone_number VARCHAR(255),
+  brand VARCHAR(255),
+  size VARCHAR(255),
+  material VARCHAR(255),
+  cond VARCHAR(255),
+  color VARCHAR(255),
+  location VARCHAR(255),
+  accessories_id INT,
+  user_id INT,
+  published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (accessories_id) REFERENCES accessories(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+
+);
+
+CREATE TABLE cats (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  title VARCHAR(255),
+  description VARCHAR(4000),
+  image VARCHAR(255),
+  price INT,
+  phone_number VARCHAR(255),
+  origin VARCHAR(255),
+  age VARCHAR(255),
+  adoption VARCHAR(255),
+  color VARCHAR(255),
+  location VARCHAR(255),
+  pets_id INT,
+  user_id INT,
+  published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (pets_id) REFERENCES pets(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE dogs (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  title VARCHAR(255),
+  description VARCHAR(4000),
+  image VARCHAR(255),
+  price INT,
+  phone_number VARCHAR(255),
+  origin VARCHAR(255),
+  age VARCHAR(255),
+  adoption VARCHAR(255),
+  color VARCHAR(255),
+  location VARCHAR(255),
+  pets_id INT,
+  user_id INT,
+  published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (pets_id) REFERENCES pets(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE birds (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  title VARCHAR(255),
+  description VARCHAR(4000),
+  image VARCHAR(255),
+  price INT,
+  phone_number VARCHAR(255),
+  species VARCHAR(255),
+  age VARCHAR(255),
+  adoption VARCHAR(255),
+  color VARCHAR(255),
+  location VARCHAR(255),
+  pets_id INT,
+  user_id INT,
+  published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (pets_id) REFERENCES pets(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE wardrobes (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  title VARCHAR(255),
+  description VARCHAR(4000),
+  image VARCHAR(255),
+  price INT,
+  phone_number VARCHAR(255),
+  size VARCHAR(255),
+  cond VARCHAR(255),
+  color VARCHAR(255),
+  location VARCHAR(255),
+  furniture_id INT, 
+  user_id INT,
+  published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (furniture_id) REFERENCES furniture(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE beds (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  title VARCHAR(255),
+  description VARCHAR(4000),
+  image VARCHAR(255),
+  price INT,
+  phone_number VARCHAR(255),
+  size VARCHAR(255),
+  cond VARCHAR(255),
+  material VARCHAR(255),
+  color VARCHAR(255),
+  location VARCHAR(255),
+  furniture_id INT,
+  user_id INT,
+  published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (furniture_id) REFERENCES furniture(id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE permission (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  permission VARCHAR(255),
+  
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE role_permission (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+   role_id INT,
+  permission_id INT,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (role_id) REFERENCES role(id),
+  FOREIGN KEY (permission_id) REFERENCES permission(id)
+);
