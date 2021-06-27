@@ -25,7 +25,6 @@ INSERT INTO users (
   1
 );
 
-
 INSERT INTO users (
   email,
   password,
@@ -47,7 +46,6 @@ INSERT INTO users (
   "Zarqa",
   1
 );
-
 
 INSERT INTO users (
   email,
@@ -71,7 +69,6 @@ INSERT INTO users (
   1
 );
 
-
 INSERT INTO users (
   email,
   password,
@@ -93,7 +90,6 @@ INSERT INTO users (
   "Italy",
   1
 );
-
 
 INSERT INTO users (
   email,
@@ -117,13 +113,11 @@ INSERT INTO users (
   1
 );
 
-
 INSERT INTO main_categories (main_category) VALUES ('motors');
 INSERT INTO main_categories (main_category) VALUES ('electronics');
 INSERT INTO main_categories (main_category) VALUES ('accessories');
 INSERT INTO main_categories (main_category) VALUES ('pets');
 INSERT INTO main_categories (main_category) VALUES ('furniture');
-
 
 INSERT INTO sub_categories (sub_category , main_category_id) VALUES ('cars' , 1 );
 INSERT INTO sub_categories (sub_category , main_category_id) VALUES ('motorbikes' , 1 );
@@ -137,8 +131,6 @@ INSERT INTO sub_categories (sub_category , main_category_id) VALUES ('dogs' , 4 
 INSERT INTO sub_categories (sub_category , main_category_id) VALUES ('birds' , 4 );
 INSERT INTO sub_categories (sub_category , main_category_id) VALUES ('wardrobes' , 5 );
 INSERT INTO sub_categories (sub_category , main_category_id) VALUES ('beds' , 5 );
-
-
 
 INSERT INTO advertisements (
   title,
