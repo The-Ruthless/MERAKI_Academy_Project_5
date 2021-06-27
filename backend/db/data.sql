@@ -160,7 +160,6 @@ INSERT INTO advertisements (
   1
 );
 
-
 INSERT INTO advertisements (
   title,  
   description,
@@ -188,8 +187,6 @@ INSERT INTO advertisements (
   10,
   2
 );
-
-
 
 INSERT INTO advertisements (
   title,
@@ -223,7 +220,6 @@ INSERT INTO advertisements (
   5
 );
 
-
 INSERT INTO advertisements (
   title,
   description,
@@ -256,7 +252,6 @@ INSERT INTO advertisements (
   5
 );
 
-
 INSERT INTO advertisements (
   
   title,  
@@ -286,7 +281,6 @@ INSERT INTO advertisements (
   4
 );
 
-
 INSERT INTO advertisements (
   title,  
   description,
@@ -314,8 +308,6 @@ INSERT INTO advertisements (
   9,
   3
 );
-
-
 
 INSERT INTO advertisements (
   title,
@@ -347,8 +339,6 @@ INSERT INTO advertisements (
   3
 );
 
-
-
 INSERT INTO advertisements (
   title,
   description,
@@ -379,8 +369,6 @@ INSERT INTO advertisements (
   2
 );
 
-
-
 INSERT INTO advertisements (
   title,
   description,
@@ -406,8 +394,6 @@ INSERT INTO advertisements (
   11,
   5
 );
-
-
 
 INSERT INTO advertisements (
   title,
@@ -441,7 +427,6 @@ INSERT INTO advertisements (
   1
 );
 
-
 INSERT INTO advertisements (
   title,
   description,
@@ -469,7 +454,6 @@ INSERT INTO advertisements (
   5,
   4
 );
-
 
 INSERT INTO advertisements (
   title,
@@ -501,9 +485,7 @@ INSERT INTO advertisements (
   2
 );
 
-
 INSERT INTO favorites(user_id,adv_id)values(1,2);
-
 INSERT INTO favorites(user_id,adv_id)values(1,3);
 INSERT INTO favorites(user_id,adv_id)values(2,2);
 INSERT INTO favorites(user_id,adv_id)values(2,1);
