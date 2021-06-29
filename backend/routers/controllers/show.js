@@ -123,10 +123,37 @@ const showLastTwenty = (req, res) => {
   });
 };
 
+const showMyFavorites = (req, res) => {
+  const query = `SELECT 
+  favorites.id,
+  advertisements.id,
+  users.full_name,
+  advertisements.title,
+  advertisements.description,
+  advertisements.price,
+  advertisements.location,
+  advertisements.image,
+  sub_categories.sub_category,
+  main_categories.main_category
+  FROM favorites
+  INNER JOIN advertisements ON favorites.adv_id=advertisements.id
+  INNER JOIN sub_categories ON advertisements.sub_category_id=sub_categories.id
+  INNER JOIN main_categories ON sub_categories.main_category_id=main_categories.id
+  INNER JOIN users ON favorites.user_id=users.id
+  WHERE favorites.user_id='${req.params.userId}'
+  ORDER BY published_at DESC`;
+
+  db.query(query, (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+};
+
 module.exports = {
   showAllCategories,
   showByCategory,
   showBySubCategory,
   showByUserId,
   showLastTwenty,
+  showMyFavorites,
 };
