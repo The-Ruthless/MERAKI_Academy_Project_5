@@ -4,7 +4,7 @@ CREATE DATABASE trading_website;
 
 USE trading_website;
 
-CREATE TABLE role (
+CREATE TABLE roles (
   id INT AUTO_INCREMENT NOT NULL,
   is_deleted TINYINT DEFAULT 0,
   role VARCHAR(255) UNIQUE NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE role (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE permission (
+CREATE TABLE permissions (
   id INT AUTO_INCREMENT NOT NULL,
   is_deleted TINYINT DEFAULT 0,
   permission VARCHAR(255),
@@ -20,15 +20,15 @@ CREATE TABLE permission (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE role_permission (
+CREATE TABLE roles_permissions (
   id INT AUTO_INCREMENT NOT NULL,
   is_deleted TINYINT DEFAULT 0,
   role_id INT,
   permission_id INT,
 
   PRIMARY KEY (id),
-  FOREIGN KEY (role_id) REFERENCES role(id),
-  FOREIGN KEY (permission_id) REFERENCES permission(id)
+  FOREIGN KEY (role_id) REFERENCES roles(id),
+  FOREIGN KEY (permission_id) REFERENCES permissions(id)
 );
 
 CREATE TABLE users (
@@ -45,7 +45,7 @@ CREATE TABLE users (
   role_id INT ,
 
   PRIMARY KEY (id),
-  FOREIGN KEY (role_id) REFERENCES role (id)
+  FOREIGN KEY (role_id) REFERENCES roles (id)
 );
 
 CREATE TABLE main_categories (

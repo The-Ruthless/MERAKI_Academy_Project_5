@@ -1,7 +1,22 @@
 USE trading_website;
 
-INSERT INTO role (role) VALUES ('user');
-INSERT INTO role (role) VALUES ('admin');
+INSERT INTO roles (role) VALUES ('user');
+INSERT INTO roles (role) VALUES ('admin');
+
+INSERT INTO permissions (permission) VALUES ('CREATE');
+INSERT INTO permissions (permission) VALUES ('READ');
+INSERT INTO permissions (permission) VALUES ('UPDATE');
+INSERT INTO permissions (permission) VALUES ('DELETE');
+
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (1,1);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (1,2);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (1,3);
+
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,1);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,2);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,3);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,4);
+
 
 INSERT INTO users (
   email,
@@ -15,7 +30,7 @@ INSERT INTO users (
   role_id
 ) VALUES (
   'obada@yahoo.com',
-  '12345',
+  '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Obada",
   25,
   'male',
@@ -37,7 +52,7 @@ INSERT INTO users (
   role_id
 ) VALUES (
   'Omar@yahoo.com',
-  '12345',
+  '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Omar",
   25,
   'male',
@@ -58,8 +73,8 @@ INSERT INTO users (
   current_location,
   role_id
 ) VALUES (
-    'Hasan@yahoo.com',
-    '12345',
+  'Hasan@yahoo.com',
+  '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Hasan",
   25,
   'male',
@@ -81,7 +96,7 @@ INSERT INTO users (
   role_id
 ) VALUES (
   'Farid@yahoo.com',
-  '12345',
+  '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Farid",
   25,
   'male',
@@ -103,7 +118,7 @@ INSERT INTO users (
   role_id
 ) VALUES (
   'ahmed@yahoo.com',
-  '12345',
+  '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "ahmed",
   25,
   'male',
