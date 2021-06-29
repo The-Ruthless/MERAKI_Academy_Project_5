@@ -27,8 +27,8 @@ CREATE TABLE roles_permissions (
   permission_id INT,
 
   PRIMARY KEY (id),
-  FOREIGN KEY (role_id) REFERENCES role(id),
-  FOREIGN KEY (permission_id) REFERENCES permission(id)
+  FOREIGN KEY (role_id) REFERENCES roles(id),
+  FOREIGN KEY (permission_id) REFERENCES permissions(id)
 );
 
 CREATE TABLE users (
@@ -45,7 +45,7 @@ CREATE TABLE users (
   role_id INT ,
 
   PRIMARY KEY (id),
-  FOREIGN KEY (role_id) REFERENCES role (id)
+  FOREIGN KEY (role_id) REFERENCES roles (id)
 );
 
 CREATE TABLE main_categories (

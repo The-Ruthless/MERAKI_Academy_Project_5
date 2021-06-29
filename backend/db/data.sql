@@ -8,6 +8,16 @@ INSERT INTO permissions (permission) VALUES ('READ');
 INSERT INTO permissions (permission) VALUES ('UPDATE');
 INSERT INTO permissions (permission) VALUES ('DELETE');
 
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (1,1);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (1,2);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (1,3);
+
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,1);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,2);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,3);
+INSERT INTO roles_permissions (role_id,permission_id) VALUES (2,4);
+
+
 INSERT INTO users (
   email,
   password,
