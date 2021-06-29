@@ -10,6 +10,7 @@ const usersRouter = require("./routers/routes/auth/signUp");
 const loginRouter = require("./routers/routes/auth/login");
 const showRouter = require("./routers/routes/show");
 const searchRouter = require("./routers/routes/search");
+const filterRouter = require("./routers/routes/filter");
 
 //built-in middlewares
 app.use(express.json());
@@ -22,6 +23,7 @@ app.use(usersRouter);
 app.use(loginRouter);
 app.use("/advertisements", showRouter);
 app.use("/search", searchRouter);
+app.use("/filter", filterRouter);
 
 const PORT = process.env.PORT || 5000;
 
