@@ -8,6 +8,7 @@ const app = express();
 
 //routers
 const usersRouter = require("./routers/routes/auth/signUp");
+const loginRouter = require('./routers/routes/auth/login');
 
 //built-in middlewares
 app.use(express.json());
@@ -17,8 +18,7 @@ app.use(cors());
 
 //app routers
 app.use(usersRouter);
-
-
+app.use(loginRouter);
 
 const PORT = process.env.PORT || 5000;
 
