@@ -7,6 +7,7 @@ const showAllCategories = (req, res) => {
   advertisements.description,
   advertisements.price,
   advertisements.image,
+  advertisements.location,
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
@@ -16,7 +17,8 @@ const showAllCategories = (req, res) => {
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
-  ORDER BY published_at DESC`;
+  ORDER BY ${req.query.sortOrder}`;
+  //http://localhost:5000/advertisements/all?sortOrder=price ASC
 
   db.query(query, (err, result) => {
     if (err) throw err;
@@ -31,6 +33,7 @@ const showByCategory = (req, res) => {
   advertisements.description,
   advertisements.price,
   advertisements.image,
+  advertisements.location,
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
@@ -40,9 +43,10 @@ const showByCategory = (req, res) => {
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
-  WHERE main_categories.main_category='${req.params.category}'
-  ORDER BY published_at DESC`;
-
+  WHERE main_categories.main_category='${req.query.mainCategory}'
+  ORDER BY ${req.query.sortOrder}`;
+  //http://localhost:5000/advertisements/maincat?mainCategory=motors&sortOrder=price ASC
+  
   db.query(query, (err, result) => {
     if (err) throw err;
     res.json(result);
@@ -56,6 +60,7 @@ const showBySubCategory = (req, res) => {
     advertisements.description,
     advertisements.price,
     advertisements.image,
+    advertisements.location,
     advertisements.published_at,
     sub_categories.sub_category,
     main_categories.main_category,
@@ -65,8 +70,9 @@ const showBySubCategory = (req, res) => {
     INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
     INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
     INNER JOIN users ON advertisements.user_id= users.id
-    WHERE sub_categories.sub_category='${req.params.subCategory}'
-    ORDER BY published_at DESC`;
+    WHERE sub_categories.sub_category='${req.query.subCategory}'
+    ORDER BY ${req.query.sortOrder}`;
+    //http://localhost:5000/advertisements/subcat?subCategory=laptops&sortOrder=price ASC
 
   db.query(query, (err, result) => {
     if (err) throw err;
@@ -81,6 +87,7 @@ const showByUserId = (req, res) => {
   advertisements.description,
   advertisements.price,
   advertisements.image,
+  advertisements.location,
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
@@ -105,6 +112,8 @@ const showLastTwenty = (req, res) => {
   advertisements.title,
   advertisements.description,
   advertisements.price,
+  advertisements.image,
+  advertisements.location,
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
@@ -131,8 +140,8 @@ const showMyFavorites = (req, res) => {
   advertisements.title,
   advertisements.description,
   advertisements.price,
-  advertisements.location,
   advertisements.image,
+  advertisements.location,
   sub_categories.sub_category,
   main_categories.main_category
   FROM favorites
