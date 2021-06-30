@@ -5,7 +5,10 @@ const bcrypt = require("bcrypt");
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const query = `SELECT * FROM users WHERE email = "${email}"`;
+    const query = `SELECT * FROM users
+    INNER JOIN roles ON users.role_id = roles.id
+    WHERE email = "${email}";`;
+
     db.query(query, async (err, result) => {
       if (err) throw err;
       //the result contains all data of the user of that specific email : name , mail , pass ...etc
@@ -14,7 +17,9 @@ const login = async (req, res) => {
       if (valid) {
         const payload = {
           userId: result[0].id,
-          role: result[0].role_id,
+          full_name: result[0].full_name,
+          current_location: result[0].current_location,
+          role: result[0].role,
         };
         const options = {
           expiresIn: "60m",
