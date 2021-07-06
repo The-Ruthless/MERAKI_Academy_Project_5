@@ -2,18 +2,28 @@ const db = require("../../../db/db");
 const bcrypt = require("bcrypt");
 
 const createNewUser = async (req, res) => {
+  try {
   let { email, password, full_name } = req.body;
   // role_id >>> 1 = user
   email = email.toLowerCase();
   password = await bcrypt.hash(password, 10);
 
-  const query = `INSERT INTO users ( email, password, full_name) VALUE (?,?,?)`;
+  const query = `INSERT INTO users ( email, password, full_name, role_id) VALUE (?,?,?,1)`;
   const arr = [email, password, full_name];
 
   db.query(query, arr, (err, result) => {
-    if (err) throw err;
+    if (err) {
+      res.json(err);
+    }
     res.json(result);
   });
+
+
+} catch (error) {
+
+  res.json("passOrMailError");
+}
+
 };
 
 const editUser = async (req, res) => {

@@ -1,3 +1,4 @@
+-- mysql -u root < "data.sql" -p
 USE trading_website;
 
 INSERT INTO roles (role) VALUES ('user');
@@ -127,6 +128,30 @@ INSERT INTO users (
   "russia",
   1
 );
+
+INSERT INTO users (
+  email,
+  password,
+  full_name,
+  age,
+  gender,
+  nationality,
+  phone_number,
+  current_location,
+  role_id
+) VALUES (
+  '',
+  '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
+  '',
+  25,
+  '',
+  '',
+  '',
+  '' ,
+  1
+);
+
+
 
 INSERT INTO main_categories (main_category) VALUES ('motors');
 INSERT INTO main_categories (main_category) VALUES ('electronics');
