@@ -1,3 +1,4 @@
+-- mysql -u root < "schema.sql" -p
 DROP DATABASE trading_website;
 
 CREATE DATABASE trading_website;
@@ -35,8 +36,8 @@ CREATE TABLE users (
   id INT AUTO_INCREMENT NOT NULL,
   is_deleted TINYINT DEFAULT 0,
   email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255),
-  full_name VARCHAR(255),
+  password VARCHAR(255) NOT NULL,
+  full_name VARCHAR(255) NOT NULL,
   age INT,
   gender VARCHAR(255),
   nationality VARCHAR(255),
