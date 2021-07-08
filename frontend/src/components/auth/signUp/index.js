@@ -27,8 +27,6 @@ export default function Register() {
         full_name: full_name,
       })
       .then((response) => {
-        console.log(`then is entered`);
-        console.log(response.data);
         if (response.data.errno === 1062) {
           setMailErr(true);
         } else {
@@ -39,7 +37,6 @@ export default function Register() {
         }
       })
       .catch((error) => {
-        console.log(`error`, error);
         alert("Please connect to the right host");
       });
   };
