@@ -12,7 +12,6 @@ const login = async (req, res) => {
     WHERE email = "${email}";`;
 
     db.query(query, async (err, result) => {
-      console.log(`result`, result[0])
       if (err) throw err;
       //the result contains all data of the user of that specific email : name , mail , pass ...etc
       if (!result[0]) return res.status(400).json("The email doesn't exist");
