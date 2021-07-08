@@ -1,7 +1,12 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+// redux
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setToken } from "./reducers/token";
 
-import './App.css'
+import "./App.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Navigation from "./components/navigation";
