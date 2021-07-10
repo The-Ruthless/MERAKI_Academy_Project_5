@@ -41,13 +41,13 @@ const Header = ({ redirect, setRedirect }) => {
     <div className="header">
       <Link style={{ textDecoration: "none" }} to="/home">
         <span className="theRuthless">The Ruthless</span>
-      </Link>
       <img
         style={{ display: "inline" }}
         className="ruthless"
         src={ruthless}
         alt="Ruthless"
-      />
+        />
+        </Link>
       <Button
         variant="contained"
         color="default"
