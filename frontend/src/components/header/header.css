@@ -1,3 +1,55 @@
 .header {
-  border: blue solid;
+  position: relative;
+  background-color: #303f9f;
+  height: 60px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.theRuthless {
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  top: 10px;
+  left: 7%;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  font-family: sans-serif;
+}
+#placeAdv {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-weight: bold;
+}
+.ruthless {
+  height: 100px;
+}
+.ob_login {
+  position: absolute;
+  display: flex;
+  color: white;
+  column-gap: 25px;
+  font-size: 20px;
+  top: 16px;
+  font-weight: bold;
+  right: 15%;
+}
+.ob_profile {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  top: 16px;
+  font-weight: bold;
+  right: 15%;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.ob_login span:hover {
+  cursor: pointer;
+  color: black;
+}
+.ob_profile:hover {
+  cursor: pointer;
+  color: black;
 }
