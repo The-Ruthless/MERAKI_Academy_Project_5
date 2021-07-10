@@ -1,6 +1,6 @@
 const db = require("../../db/db");
 
-const showAllCategories = (req, res) => {
+const showFilterSearchSortAll = (req, res) => {
   const query = `SELECT 
   advertisements.id,
   advertisements.title,
@@ -17,8 +17,10 @@ const showAllCategories = (req, res) => {
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
+  AND advertisements.title LIKE '%${req.query.keyword}%'
+  WHERE location like '${req.query.location}' 
+  AND price BETWEEN ${req.query.min} AND ${req.query.max} 
   ORDER BY ${req.query.sortOrder}`;
-  //http://localhost:5000/advertisements/all?sortOrder=price ASC
 
   db.query(query, (err, result) => {
     if (err) throw err;
@@ -26,7 +28,7 @@ const showAllCategories = (req, res) => {
   });
 };
 
-const showByCategory = (req, res) => {
+const showFilterSearchSortCategory = (req, res) => {
   const query = `SELECT 
   advertisements.id,
   advertisements.title,
@@ -43,17 +45,19 @@ const showByCategory = (req, res) => {
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
-  WHERE main_categories.main_category='${req.query.mainCategory}'
+  WHERE main_categories.main_category LIKE '${req.query.category}' 
+  AND advertisements.title LIKE '%${req.query.keyword}%'
+  AND location LIKE '${req.query.location}'
+  AND price BETWEEN ${req.query.min} AND ${req.query.max} 
   ORDER BY ${req.query.sortOrder}`;
-  //http://localhost:5000/advertisements/maincat?mainCategory=motors&sortOrder=price ASC
-  
+
   db.query(query, (err, result) => {
     if (err) throw err;
     res.json(result);
   });
 };
 
-const showBySubCategory = (req, res) => {
+const showFilterSearchSortSubCategory = (req, res) => {
   const query = `SELECT 
     advertisements.id,
     advertisements.title,
@@ -70,9 +74,11 @@ const showBySubCategory = (req, res) => {
     INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
     INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
     INNER JOIN users ON advertisements.user_id= users.id
-    WHERE sub_categories.sub_category='${req.query.subCategory}'
+    WHERE sub_categories.sub_category LIKE '${req.query.subCategory}' 
+    AND advertisements.title LIKE '%${req.query.keyword}%'
+    AND location LIKE '${req.query.location}'
+    AND price BETWEEN ${req.query.min} AND ${req.query.max} 
     ORDER BY ${req.query.sortOrder}`;
-    //http://localhost:5000/advertisements/subcat?subCategory=laptops&sortOrder=price ASC
 
   db.query(query, (err, result) => {
     if (err) throw err;
@@ -106,7 +112,7 @@ const showByUserId = (req, res) => {
   });
 };
 
-const showLastTwenty = (req, res) => {
+const showLastSix = (req, res) => {
   const query = `SELECT 
   advertisements.id,
   advertisements.title,
@@ -124,7 +130,7 @@ const showLastTwenty = (req, res) => {
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
   ORDER BY published_at DESC
-  LIMIT 0, 20`;
+  LIMIT 0, 6`;
 
   db.query(query, (err, result) => {
     if (err) throw err;
@@ -159,10 +165,10 @@ const showMyFavorites = (req, res) => {
 };
 
 module.exports = {
-  showAllCategories,
-  showByCategory,
-  showBySubCategory,
+  showFilterSearchSortAll,
+  showFilterSearchSortCategory,
+  showFilterSearchSortSubCategory,
   showByUserId,
-  showLastTwenty,
+  showLastSix,
   showMyFavorites,
 };
