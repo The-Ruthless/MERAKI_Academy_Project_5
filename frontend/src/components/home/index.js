@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoArrowRight } from "react-icons/go";
 import Button from "@material-ui/core/Button";
-// import Adv from "../advertisements/adv";
+import Adv from "../advertisements/adv";
 
 import "./home.css";
 
@@ -19,16 +19,14 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
       url: `http://localhost:5000/advertisements/lasttwenty`,
     })
       .then((response) => {
-        console.log(response.data);
         setLast10(response.data);
       })
       .catch((err) => {
-        console.log("ERR: ", err.response);
+        throw err;
       });
   };
 
   useEffect(() => {
-    console.log("hi");
     showLast10();
   }, []);
 
@@ -121,8 +119,11 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
           <p className="iconName">Furniture</p>
         </div>
       </div>
-      <h2 className="recentWord" style={{display:'inline'}}>Recently added advertisements</h2><hr className='style-two'/>
-      {/* <div className="recent">
+      <h2 className="recentWord" style={{ display: "inline" }}>
+        Recently added advertisements
+      </h2>
+      <hr className="style-two" />
+      <div className="recent">
         {last10.map((elem, i) => (
           <Adv
             key={i}
@@ -133,7 +134,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             location={elem.location}
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

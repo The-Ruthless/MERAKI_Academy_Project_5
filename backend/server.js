@@ -9,8 +9,6 @@ const app = express();
 const usersRouter = require("./routers/routes/auth/signUp");
 const loginRouter = require("./routers/routes/auth/login");
 const showRouter = require("./routers/routes/show");
-const searchRouter = require("./routers/routes/search");
-const filterRouter = require("./routers/routes/filter");
 const adsCreationRouter = require("./routers/routes/adsCreation");
 
 //built-in middlewares
@@ -23,8 +21,6 @@ app.use(cors());
 app.use(usersRouter);
 app.use(loginRouter);
 app.use("/advertisements", showRouter);
-app.use("/search", searchRouter);
-app.use("/filter", filterRouter);
 app.use("/advertisement", adsCreationRouter);
 
 const PORT = process.env.PORT || 5000;

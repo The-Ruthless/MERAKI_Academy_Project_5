@@ -58,10 +58,12 @@ const Header = ({ redirect, setRedirect }) => {
       </Button>
       {state.token? (
         <div className="ob_login">
+        <Link style={{ textDecoration: "none", color: "white" }} to="/Profile">
         <span className="ob_profile">
           <AccountCircleIcon id="profile_icon" />
           My Profile
         </span>
+        </Link>
         <span onClick={()=>{dispatch(setToken(''));localStorage.clear();}}>Logout</span>
         </div>
       ) : (
