@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
 import axios from "axios";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setToken, setParsedToken } from "../../../reducers/token";
 import "../login/login.css";
@@ -54,6 +55,7 @@ export default function Login({setRedirect}) {
     })
       .then((response) => {
         dispatch(setToken(response.data));
+        localStorage.setItem('token', JSON.stringify(response.data))
         if(response.status==200)setLogged(true)
       })
       .catch((err) => {
