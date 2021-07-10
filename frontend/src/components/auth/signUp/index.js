@@ -11,7 +11,6 @@ export default function Register() {
   const [full_name, setFull_name] = useState(undefined);
   const [email, setEmail] = useState(undefined);
   const [password, setPassword] = useState(undefined);
-
   const [mailErr, setMailErr] = useState(false);
   const [generalErr, setGeneralErr] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -88,9 +87,7 @@ export default function Register() {
         </Button>
 
         {mailErr === true ? (
-          <p className="Message">
-            The Email you've entered already exists or is not filled correctly
-          </p>
+          <p className="Message">The Email you've entered already exists</p>
         ) : generalErr === true ? (
           <p className="Message">
             Please fill in all required fields correctly

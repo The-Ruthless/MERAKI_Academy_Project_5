@@ -25,7 +25,6 @@ const App = () => {
       <Header />
       <Navigation />
       <Route path="/Home" render={() => <Home />} />
-      <Home />
       <Route path="/advertisements" render={() => <Advertisements />} />
       <Route path="/advertisement" render={() => <Advertisement />} />
       <Route path="/Profile" render={() => <Profile />} />
