@@ -5,7 +5,9 @@ const bcrypt = require("bcrypt");
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const query = `SELECT * FROM users
+    const query = `SELECT users.id , users.is_deleted, users.email , users.password, users.full_name, users.age, users.gender, 
+    users.nationality , users.phone_number , users.current_location , users.role_id , roles.role
+    FROM users
     INNER JOIN roles ON users.role_id = roles.id
     WHERE email = "${email}";`;
 
@@ -17,9 +19,16 @@ const login = async (req, res) => {
       if (valid) {
         const payload = {
           userId: result[0].id,
+          email : result[0].email,
           full_name: result[0].full_name,
-          current_location: result[0].current_location,
+          role_id: result[0].role_id,
           role: result[0].role,
+
+          age : result[0].age,
+          gender : result[0].gender,
+          nationality : result[0].nationality,
+          phone_number : result[0].phone_number,
+          current_location: result[0].current_location,
         };
         const options = {
           expiresIn: "60m",

@@ -52,7 +52,7 @@ INSERT INTO users (
   current_location,
   role_id
 ) VALUES (
-  'Omar@yahoo.com',
+  'omar@yahoo.com',
   '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Omar",
   25,
@@ -74,7 +74,7 @@ INSERT INTO users (
   current_location,
   role_id
 ) VALUES (
-  'Hasan@yahoo.com',
+  'hasan@yahoo.com',
   '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Hasan",
   25,
@@ -96,7 +96,7 @@ INSERT INTO users (
   current_location,
   role_id
 ) VALUES (
-  'Farid@yahoo.com',
+  'farid@yahoo.com',
   '$2b$10$aF.pd55yjxc1Iok.ASohHOd3OC3xGY4EjbXgEBCSrg3kG1WJeE4jC',
   "Farid",
   25,
