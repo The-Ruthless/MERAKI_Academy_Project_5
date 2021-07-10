@@ -21,6 +21,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState(undefined);
   const [loginResult, setLoginResult] = useState(undefined);
+  const [logged, setLogged] = useState(false)
 
   // *********************************************************************
   const [values, setValues] = React.useState({
@@ -54,6 +55,7 @@ export default function Login() {
     })
       .then((response) => {
         dispatch(setToken(response.data));
+        if(response.status==200)setLogged(true)
       })
       .catch((err) => {
         if (err.response.status === 400) {
@@ -116,6 +118,7 @@ export default function Login() {
           <p className="Message">The password you’ve entered is incorrect</p>
         ) : null}
       </form>
+      {logged?<Redirect to='/home'/>:null}
     </>
   );
 }
