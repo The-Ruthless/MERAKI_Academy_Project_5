@@ -1,6 +1,7 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setToken, setParsedToken } from "../../reducers/token";
 
 import Button from "@material-ui/core/Button";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -8,17 +9,34 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ruthless from "./Ruthless-07.png";
 import "./header.css";
 
-const Header = ({redirect,setRedirect}) => {
-  
+const jwt = require("jsonwebtoken");
+
+const Header = ({ redirect, setRedirect }) => {
+  const dispatch = useDispatch();
   const state = useSelector((statetree) => {
     return {
       token: statetree.token.token,
       parsedToken: statetree.token.parsedToken,
     };
   });
-  const placeAdvRedirect =()=>{
-    if(state.parsedToken.userId){setRedirect('toPlaceAdv')}else{setRedirect('toLogin')}
-  }
+  const placeAdvRedirect = () => {
+    if (state.token) {
+      setRedirect("toPlaceAdv");
+    } else {
+      setRedirect("toLogin");
+    }
+  };
+  // const { REACT_APP_SECRET_KEY } = process.env;
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    // if(token){console.log( jwt.verify(token, 'secretKey'))}
+    if (token) {
+      if (jwt.verify(token, "secretKey")) {
+        dispatch(setToken(token));
+      }
+    }
+  }, []);
   return (
     <div className="header">
       <Link style={{ textDecoration: "none" }} to="/home">
@@ -38,11 +56,14 @@ const Header = ({redirect,setRedirect}) => {
       >
         Place Your Ad
       </Button>
-      {state.parsedToken.userId ? (
+      {state.token? (
+        <div className="ob_login">
         <span className="ob_profile">
           <AccountCircleIcon id="profile_icon" />
           My Profile
         </span>
+        <span onClick={()=>{dispatch(setToken(''));localStorage.clear();}}>Logout</span>
+        </div>
       ) : (
         <div className="ob_login">
           <Link style={{ textDecoration: "none", color: "white" }} to="/login">
@@ -53,7 +74,11 @@ const Header = ({redirect,setRedirect}) => {
           </Link>
         </div>
       )}
-      {redirect==='toPlaceAdv'?<Redirect to='/placeAdv'/>:redirect==='toLogin'?<Redirect to='/login'/>:null}
+      {redirect === "toPlaceAdv" ? (
+        <Redirect to="/placeAdv" />
+      ) : redirect === "toLogin" ? (
+        <Redirect to="/login" />
+      ) : null}
     </div>
   );
 };

@@ -14,6 +14,7 @@ import Favorites from "./components/favorites";
 import PlaceAdv from "./components/placeAdvertisement";
 import Login from "./components/auth/login";
 import Signup from "./components/auth/signUp";
+// require("dotenv").config();
 
 const App = () => {
   const [showType, setShowType] = useState("all");
