@@ -71,7 +71,7 @@ useEffect(() => {
   setRedirect('')
 }, [])
   return (
-    <>
+    <div className='loginScreen'>
       <form className="login">
         <TextField
           id="text"
@@ -122,6 +122,6 @@ useEffect(() => {
         ) : null}
       </form>
       {logged?<Redirect to='/'/>:null}
-    </>
+    </div>
   );
 }

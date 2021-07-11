@@ -1,34 +1,34 @@
 .register {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    width: 20%;
-    row-gap: 25px ;
-    padding: 3%;
-    height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 20%;
+  row-gap: 25px;
+  padding: 3%;
+  height: 350px;
 
-    border-radius: 10px;
-    background-color: #bfc7d900;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+  background-color: #bfc7d900;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #button {
-
-    width: 50%;
-    height: 50px;
-margin-left: auto;
-margin-right: auto;
-
+  width: 50%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #text {
-
-    margin: auto;
-
+  margin: auto;
 }
 
 .Message {
-    color : red;
-    margin: 0%;
+  color: red;
+  margin: 0%;
+}
+.registerScreen{
+    height: 100vh;
+    display: flex;
 }

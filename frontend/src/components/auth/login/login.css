@@ -1,29 +1,26 @@
 .login {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    width: 25%;
-    row-gap: 40px ;
-    padding: 3%;
-    /* padding-bottom: 6%; */
-    height: 300px;
-
-    border-radius: 10px;
-    background-color: #bfc7d900;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 25%;
+  row-gap: 40px;
+  padding: 3%;
+  height: 300px;
+  border-radius: 5px;
+  background-color: #bfc7d900;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-#button{
-
-    margin-top: 3%;
-
+#button {
+  margin-top: 3%;
 }
 
 .Message {
-    /* position: absolute;
-    top: 410px;
-    left: 503px;     */
-    color : red;
-    margin: 0%;
+  color: red;
+  margin: 0%;
+}
+.loginScreen{
+    height: 100vh;
+    display: flex;
 }

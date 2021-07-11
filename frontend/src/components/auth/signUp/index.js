@@ -41,7 +41,7 @@ export default function Register() {
   };
 
   return (
-    <>
+    <div className='registerScreen'>
       <form className="register">
         <TextField
           id="text"
@@ -94,6 +94,6 @@ export default function Register() {
           </p>
         ) : null}
       </form>
-    </>
+    </div>
   );
 }
