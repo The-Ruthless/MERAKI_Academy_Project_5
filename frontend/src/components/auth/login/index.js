@@ -121,7 +121,7 @@ useEffect(() => {
           <p className="Message">The password you’ve entered is incorrect</p>
         ) : null}
       </form>
-      {logged?<Redirect to='/home'/>:null}
+      {logged?<Redirect to='/'/>:null}
     </>
   );
 }

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+a {
+  color: black;
+}
+#adv {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#cat_icons {
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 210px 210px 210px;
+  grid-template-rows: 210px 210px 210px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.cate_icons {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.cate_icons:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(194, 192, 192);
+}
+
+#OM_h2 {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#OM_h3 {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+#motors_icon {
+  position: absolute;
+  left: 65px;
+  top: 40px;
+}
+#OM_cat_motors {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 60px;
+}
+
+/**/
+
+#electronics_icon {
+  position: absolute;
+  left: 70px;
+  top: 40px;
+}
+#OM_cat_electronics {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 40px;
+}
+
+#accessoires_icon {
+  position: absolute;
+  left: 50px;
+  top: 40px;
+}
+#OM_cat_accessoires {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 30px;
+}
+
+#pets_icon {
+  position: absolute;
+  left: 60px;
+  top: 40px;
+}
+#OM_cat_pets {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 70px;
+}
+
+#furniture_icon {
+  position: absolute;
+  left: 50px;
+  top: 40px;
+}
+#OM_cat_furniture {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 45px;
+}
+
+#books_icon {
+  position: absolute;
+  left: 60px;
+  top: 40px;
+}
+#OM_cat_books {
+  color: black;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 120px;
+  left: 60px;
+}

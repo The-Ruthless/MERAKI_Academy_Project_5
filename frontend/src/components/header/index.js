@@ -39,7 +39,7 @@ const Header = ({ redirect, setRedirect }) => {
   }, []);
   return (
     <div className="header">
-      <Link style={{ textDecoration: "none" }} to="/home">
+      <Link style={{ textDecoration: "none" }} to="/">
         <span className="theRuthless">The Ruthless</span>
       <img
         style={{ display: "inline" }}
@@ -64,7 +64,9 @@ const Header = ({ redirect, setRedirect }) => {
           My Profile
         </span>
         </Link>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
         <span onClick={()=>{dispatch(setToken(''));localStorage.clear();}}>Logout</span>
+        </Link>
         </div>
       ) : (
         <div className="ob_login">

@@ -52,13 +52,13 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
           Explore &nbsp; <GoArrowRight className="exploreArrow" />
         </Button>
       </div>
-      <div id="cat_icons">
+      <div id="ob_cat_icons">
         <div
           onClick={() => {
             setShowType("all");
             history.push("/advertisements");
           }}
-          className="cate_icons"
+          className="ob_cate_icons"
         >
           <FontAwesomeIcon className="icon" size="4x" icon="infinity" />
           <p className="iconName">ALL</p>
@@ -69,7 +69,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             setCategory("motors");
             history.push("/advertisements");
           }}
-          className="cate_icons"
+          className="ob_cate_icons"
         >
           <FontAwesomeIcon className="icon" size="4x" icon="car" />
           <p className="iconName">Motors</p>
@@ -80,7 +80,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             setCategory("electronics");
             history.push("/advertisements");
           }}
-          className="cate_icons"
+          className="ob_cate_icons"
         >
           <FontAwesomeIcon className="icon" size="4x" icon="plug" />
           <p className="iconName">Electronics</p>
@@ -91,7 +91,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             setCategory("accessories");
             history.push("/advertisements");
           }}
-          className="cate_icons"
+          className="ob_cate_icons"
         >
           <FontAwesomeIcon className="icon" size="4x" icon="gifts" />
           <p className="iconName">Accessoires</p>
@@ -102,7 +102,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             setCategory("pets");
             history.push("/advertisements");
           }}
-          className="cate_icons"
+          className="ob_cate_icons"
         >
           <FontAwesomeIcon className="icon" size="4x" icon="paw" />
           <p className="iconName">Pets</p>
@@ -113,7 +113,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             setCategory("furniture");
             history.push("/advertisements");
           }}
-          className="cate_icons"
+          className="ob_cate_icons"
         >
           <FontAwesomeIcon className="icon" size="4x" icon="couch" />
           <p className="iconName">Furniture</p>
