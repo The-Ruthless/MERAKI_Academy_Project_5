@@ -28,6 +28,7 @@ const Advertisements = ({ category, subCategory, showType }) => {
     })
       .then((response) => {
         setAdvertisements(response.data);
+        console.log(response.data);
       })
       .catch((err) => {
         console.log("ERR: ", err.response);
@@ -148,6 +149,7 @@ const Advertisements = ({ category, subCategory, showType }) => {
             title={elem.title}
             price={elem.price}
             location={elem.location}
+            date={elem.published_at}
           />
         ))}
       </div>

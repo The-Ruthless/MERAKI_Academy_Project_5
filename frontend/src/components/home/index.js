@@ -132,6 +132,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
             title={elem.title}
             price={elem.price}
             location={elem.location}
+            date={elem.published_at}
           />
         ))}
       </div>
