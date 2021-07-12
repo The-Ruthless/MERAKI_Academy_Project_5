@@ -49,7 +49,7 @@ const Category = ({ icons }) => {
 		  token: statetree.token.token,
 		  parsedToken: statetree.token.parsedToken,
 		};
-	  });
+	});
 
 
 
@@ -72,7 +72,7 @@ const Category = ({ icons }) => {
   const [location, setLocation] = useState();
   const [sub_category_id, setSubcategoryid] = useState();
 
-  let user_id = 1;
+  
   
 
   /* Upload Image *********************************************************************/
@@ -107,7 +107,7 @@ const Category = ({ icons }) => {
     setFiveImages(false);
   };
 
-  const [adv_id, setAdv_id] = useState();
+  
 
   const placeAd = () => {
     if (!title) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect , useHistory} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken, setParsedToken } from "../../reducers/token";
 
@@ -12,6 +12,8 @@ import "./header.css";
 const jwt = require("jsonwebtoken");
 
 const Header = ({ redirect, setRedirect }) => {
+  const history = useHistory();
+
   const dispatch = useDispatch();
   const state = useSelector((statetree) => {
     return {
@@ -28,15 +30,25 @@ const Header = ({ redirect, setRedirect }) => {
   };
   // const { REACT_APP_SECRET_KEY } = process.env;
 
+ 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
     // if(token){console.log( jwt.verify(token, 'secretKey'))}
     if (token) {
+      try{
       if (jwt.verify(token, "secretKey")) {
         dispatch(setToken(token));
+      }}catch(err){
+        localStorage.clear();
+        history.push("/login")
       }
+    
+    
+       
+      
     }
   }, []);
+
   return (
     <div className="header">
       <Link style={{ textDecoration: "none" }} to="/">
