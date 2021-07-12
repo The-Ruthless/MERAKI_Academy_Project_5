@@ -1,0 +1,82 @@
+#parent{
+    
+    display: flex;
+    
+
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.911);
+    
+    background-color: #3D3D3D;
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-content {
+    flex-grow: 1;
+    background-color: #3D3D3D;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.911);
+    border-top: 1px solid rgba(0, 0, 0, 0.911);
+    color:white;
+    
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-footer {
+    border-top: 1px solid rgba(8, 8, 8, 0.938);
+    color: white;
+    background-color: #3D3D3D;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.911);
+}
+
+
+#sidebarr{
+    background-color: brown;
+    
+}
+
+#div2{
+    
+    width: 90%;
+    
+    
+}
+
+
+
+
+#poro{
+    background-color: aqua!important;
+    
+   
+}
+
+
+
+
+
+#sideBar{
+    background-color: aqua;
+    
+    
+}
+
+.logo{
+    height: 200px;
+  width: 200px;
+}
+
+
+
+
+.sider{
+    margin-top: 50px;
+    width: 20%;
+    margin-bottom: 50px;
+    
+
+}
+
+#pagecontent{
+    background-color: blue;
+    position: absolute;
+    width: 500px;
+}

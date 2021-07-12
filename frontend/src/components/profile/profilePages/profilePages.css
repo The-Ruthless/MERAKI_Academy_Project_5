@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+#OM_profile{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 750px;
+}
+
+
+
+#pro_header{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 20px;
+   position: absolute;
+   left: 42%;
+}
+
+#user_inform{
+    width: 70%;
+    position: absolute;
+    height: 90%;
+    margin-left: 145px;
+    margin-top: 100px;
+}
+
+hr#hr_profile {
+    position: absolute;
+   top: 70px;
+   width: 95%;
+   margin-left: 30px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#profile_image{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+#inform{
+    width: 100%;
+    position: absolute;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    align-items: center;
+
+    row-gap: 25px;
+      
+}
+
+.p_inform{
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: 23px;
+    display: block;
+}
+
+
+#edit_profile_but{
+  margin-top: 5px;
+}
+
+/*Edit PROFILE PAGE ****************************************************************************/ 
+
+
+#OM_editprofile{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+
+#edit_pro_header{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 20px;
+   position: absolute;
+   left: 42%;
+}
+
+
+#edit_user_inform{
+    width: 77%;
+    position: absolute;
+    height: 90%;
+    margin-left: 160px;
+    margin-top: 100px;
+}
+
+
+#edit_inform{
+    width: 100%;
+    position: absolute;
+    margin-top: 20px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;   
+   
+}
+
+
+#hr_edit_profile {
+    position: absolute;
+   top: 70px;
+   width: 95%;
+   margin-left: 30px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+.om_input_edit_profile{
+    width: 60%;
+    
+}
+
+
+
+/*MY Ads PAGE ****************************************************************************/ 
+
+
+#OM_MyAds{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    
+   
+   
+    
+}
+
+#myads_header{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 20px;
+   
+   left: 35%;
+}
+
+
+#myads_div{
+    width: 95%;
+    
+    
+    margin-left: 25px;
+    margin-top: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap :20px;
+}
+
+
+#hr_myads {
+    
+   top: 70px;
+   width: 80%;
+   margin-left: 7%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+
+/* MY ONE AD**************************************/
+
+#OM_my_one_ads{
+    position: relative;
+    height: 250px;
+    width: 90%;
+    border-left: 2px solid rgba(22, 22, 22, 0.3);
+    border-radius: 5px;
+    
+    
+}
+
+
+#myads_image{
+    height: 220px;
+    margin-top: 5px;
+    position: absolute;
+    left: 0.75%;
+}
+
+#hr_myAds{
+    position: absolute;
+    top: 250px;
+    width: 95%;
+    margin-left: 5px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(53, 52, 52, 0.3);
+
+}
+
+
+#myads_title{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 20px;
+   position: absolute;
+   left: 33.5%;
+}
+
+#myads_price{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 195px;
+   position: absolute;
+   left: 90%;
+   color:#303f9f;
+   font-size: 25px;
+}
+
+
+
+#myads_location{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 190px;
+   position: absolute;
+   left: 33%;
+}
+
+
+#myads_date{
+    font-family: Montserrat;
+    font-weight: bolder;
+    margin-top: 60px;
+   position: absolute;
+   left: 34%;
+   color:#303f9f;
+
+}
+
+#x_clear{
+    font-weight: bolder;
+   position: absolute;
+   left: 93%;
+   margin-top: 20px;
+}
+
+
