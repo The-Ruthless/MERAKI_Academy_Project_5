@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
 import axios from "axios";
@@ -6,6 +6,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken, setParsedToken } from "../../../reducers/token";
 import "../login/login.css";
+
+import { GoogleLogin } from "react-google-login";
 
 import IconButton from "@material-ui/core/IconButton";
 import Input from "@material-ui/core/Input";
@@ -17,13 +19,13 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Button from "@material-ui/core/Button";
 
-export default function Login({setRedirect}) {
+export default function Login({ setRedirect }) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState(undefined);
   const [loginResult, setLoginResult] = useState(undefined);
-  const [logged, setLogged] = useState(false)
+  const [logged, setLogged] = useState(false);
 
-  // *********************************************************************
+  // ****************************show/hide pass*****************************
   const [values, setValues] = React.useState({
     password: "",
     showPassword: false,
@@ -37,7 +39,7 @@ export default function Login({setRedirect}) {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-  //  *********************************************************************
+  // **********************************************************************
 
   const state = useSelector((statetree) => {
     return {
@@ -55,8 +57,8 @@ export default function Login({setRedirect}) {
     })
       .then((response) => {
         dispatch(setToken(response.data));
-        localStorage.setItem('token', JSON.stringify(response.data))
-        if(response.status==200)setLogged(true)
+        localStorage.setItem("token", JSON.stringify(response.data));
+        if (response.status == 200) setLogged(true);
       })
       .catch((err) => {
         if (err.response.status === 400) {
@@ -67,11 +69,49 @@ export default function Login({setRedirect}) {
         }
       });
   };
-useEffect(() => {
-  setRedirect('')
-}, [])
+
+  // ****************************Google************************************
+
+  const Glogin = async (response) => {
+    setLoginResult(undefined);
+    axios({
+      method: "post",
+      url: "http://localhost:5000/login",
+      data: { email: response.profileObj.email, password: "google0000" },
+    })
+      .then((result) => {
+        dispatch(setToken(result.data));
+        localStorage.setItem("token", JSON.stringify(result.data));
+        if (result.status == 200) setLogged(true);
+      })
+      .catch((err) => {
+        if (err.response.status === 400) {
+          axios
+            .post(`http://localhost:5000/register`, {
+              email: response.profileObj.email,
+              password: "google0000",
+              full_name: response.profileObj.name,
+            })
+            .then((result) => {
+              Glogin(response);
+            });
+        } else {
+          throw new err();
+        }
+      });
+  };
+
+  const Gfail = (response) => {
+    console.log(response);
+  };
+
+  //  *********************************************************************
+
+  useEffect(() => {
+    setRedirect("");
+  }, []);
   return (
-    <div className='loginScreen'>
+    <>
       <form className="login">
         <TextField
           id="text"
@@ -84,7 +124,7 @@ useEffect(() => {
           }}
         />
 
-        {/* ********************************************************************* */}
+        {/* **************************show/hide pass****************************** */}
         <FormControl>
           <InputLabel htmlFor="standard-adornment-password">
             Password
@@ -110,10 +150,23 @@ useEffect(() => {
         </FormControl>
         {/* ******************************************************************* */}
 
-        <Button id="button" variant="contained" color="primary" onClick={login}>
+        <Button
+          id="buttonl"
+          variant="contained"
+          color="primary"
+          onClick={login}
+        >
           {" "}
           Login{" "}
         </Button>
+
+        <GoogleLogin
+          className="google"
+          clientId="837311133414-ohq0j0c1gl0tcormahcggad0pl62ndsn.apps.googleusercontent.com"
+          buttonText="Login with Google"
+          onSuccess={Glogin}
+          onFailure={Gfail}
+        />
 
         {loginResult === 400 ? (
           <p className="Message">The Email you've entered doesn't exist</p>
@@ -121,7 +174,7 @@ useEffect(() => {
           <p className="Message">The password you’ve entered is incorrect</p>
         ) : null}
       </form>
-      {logged?<Redirect to='/'/>:null}
-    </div>
+      {logged ? <Redirect to="/" /> : null}
+    </>
   );
 }

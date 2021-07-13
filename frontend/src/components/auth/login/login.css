@@ -1,26 +1,42 @@
 .login {
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   margin: auto;
   width: 25%;
-  row-gap: 40px;
+  row-gap: 30px ;
   padding: 3%;
+  /* padding-bottom: 6%; */
   height: 300px;
-  border-radius: 5px;
+
+  border-radius: 10px;
   background-color: #bfc7d900;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-#button {
-  margin-top: 3%;
+#buttonl{
+
+  margin-top: 20px;
+  border-radius: 2px;
+  height: 45px;
+
 }
 
+
 .Message {
-  color: red;
+  /* position: absolute;
+  top: 410px;
+  left: 503px;     */
+  color : red;
   margin: 0%;
+  text-align: center;
 }
-.loginScreen{
-    height: 100vh;
-    display: flex;
+
+
+.google{
+
+  background-color: rgb(146, 28, 28);
+  border-radius: 5px;
+
 }
+  
