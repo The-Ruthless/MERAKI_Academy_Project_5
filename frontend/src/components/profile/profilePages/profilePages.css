@@ -255,3 +255,16 @@ hr#hr_profile {
 }
 
 
+.advLink {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: system-ui;
+}
+.advLink:hover {
+    color: #303f9f;
+    text-decoration: underline;
+    cursor: pointer;
+}
+

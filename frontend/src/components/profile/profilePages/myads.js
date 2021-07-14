@@ -61,7 +61,7 @@ const MyAds = () => {
 
 
       {userAds?userAds.map((elem)=>{
-          return <MyOneAds  title = {elem.title} price = {elem.price} location = {elem.location} image = {elem.image}  />
+          return <MyOneAds id={elem.id}  title = {elem.title} price = {elem.price} location = {elem.location} image = {elem.image}  />
        }) : null }
 
 

@@ -43,6 +43,7 @@ const useStyles1 = makeStyles((theme) => ({
 }));
 
 const Category = ({ icons }) => {
+  const history = useHistory()
 
 	const state = useSelector((statetree) => {
 		return {
@@ -81,6 +82,7 @@ const Category = ({ icons }) => {
 
   const [images, setImages] = useState([]);
   const [fiveImages, setFiveImages] = useState(false);
+  const [toMyadv , setToMyAdv] = useState(false)
 
   const types = ["image/png", "image/jpeg"];
 
@@ -147,8 +149,11 @@ const Category = ({ icons }) => {
           user_id : jwt.decode(state.token).userId ,
         })
         .then((response) => {
+          setToMyAdv(true)
           images.forEach((elem) => {
             addImage(response.data.insertId, elem);
+            
+            
           });
         })
         .catch((err) => {
@@ -399,6 +404,7 @@ const Category = ({ icons }) => {
           </Grid>
         </Grid>
       </div>
+      {toMyadv?<Redirect to="/profile/myads" />:null}
     </div>
   );
 };
