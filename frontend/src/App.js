@@ -10,11 +10,9 @@ import Home from "./components/home";
 import Advertisements from "./components/advertisements";
 import Advertisement from "./components/advertisement";
 import Profile from "./components/profile";
-import Favorites from "./components/favorites";
 import PlaceAdv from "./components/placeAdv/placeadv";
 import Login from "./components/auth/login";
 import Signup from "./components/auth/signUp";
-// require("dotenv").config();
 
 const App = () => {
   const [showType, setShowType] = useState("all");
@@ -37,6 +35,7 @@ const App = () => {
             setShowType={setShowType}
             setCategory={setCategory}
             setSubCategory={setSubCategory}
+            setRedirect={setRedirect}
           />
         )}
       />
@@ -47,15 +46,21 @@ const App = () => {
             showType={showType}
             category={category}
             subCategory={subCategory}
+            setRedirect={setRedirect}
           />
         )}
       />
       <Route path="/advertisement/:id" render={() => <Advertisement />} />
       <Route path="/Profile" render={() => <Profile />} />
-      <Route path="/favorites" render={() => <Favorites />} />
-      <Route path="/placeAdv" render={() => <PlaceAdv />} />
+      <Route
+        path="/placeAdv"
+        render={() => <PlaceAdv setRedirect={setRedirect} />}
+      />
       <Route path="/login" render={() => <Login setRedirect={setRedirect} />} />
-      <Route path="/signup" render={() => <Signup />} />
+      <Route
+        path="/signup"
+        render={() => <Signup setRedirect={setRedirect} />}
+      />
       <Footer />
     </div>
   );

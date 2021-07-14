@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios";
 import "./signUp.css";
 import { Redirect, useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-export default function Register() {
+export default function Register({setRedirect}) {
   let history = useHistory();
 
   const [full_name, setFull_name] = useState(undefined);
@@ -14,7 +14,9 @@ export default function Register() {
   const [mailErr, setMailErr] = useState(false);
   const [generalErr, setGeneralErr] = useState(false);
   const [success, setSuccess] = useState(false);
-
+  useEffect(() => {
+    setRedirect('')
+  }, [])
   const postUser = () => {
     setMailErr(false);
     setGeneralErr(false);

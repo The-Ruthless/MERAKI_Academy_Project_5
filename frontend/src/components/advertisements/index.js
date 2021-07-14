@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
 import Pagination from "@material-ui/lab/Pagination";
 
 import Search from "../search";
@@ -9,14 +8,12 @@ import "./advertisements.css";
 
 const axios = require("axios").default;
 
-const Advertisements = ({ category, subCategory, showType }) => {
+const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
   const [advertisements, setAdvertisements] = useState([]);
   const [location, setLocation] = useState("%%");
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(999999);
   const [keyword, setKeyword] = useState("%%");
-
-  const [to, setTo] = useState(999999);
 
   const [advCount, setAdvCount] = useState(1);
   const pages = Math.ceil(advCount / 9);
@@ -45,7 +42,6 @@ const Advertisements = ({ category, subCategory, showType }) => {
     })
       .then((response) => {
         setAdvertisements(response.data.advs);
-        // setAdvCount(response.data.count);
       })
       .catch((err) => {
         console.log("ERR: ", err.response);
@@ -58,8 +54,6 @@ const Advertisements = ({ category, subCategory, showType }) => {
       url: `http://localhost:5000/advertisements/all/count?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
     })
       .then((response) => {
-        // setAdvertisements(response.data.advs);
-        console.log(response);
         setAdvCount(response.data.count);
       })
       .catch((err) => {
@@ -72,7 +66,6 @@ const Advertisements = ({ category, subCategory, showType }) => {
       url: `http://localhost:5000/advertisements/category?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
-        console.log(response.data);
         setAdvertisements(response.data.advs);
       })
       .catch((err) => {
@@ -121,6 +114,7 @@ const Advertisements = ({ category, subCategory, showType }) => {
 
   useEffect(() => {
     queryThroughWhat();
+    setRedirect();
   }, [subCategory, from]);
 
   return (

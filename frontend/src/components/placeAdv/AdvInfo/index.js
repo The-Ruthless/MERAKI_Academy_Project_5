@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import { Link, useHistory, Redirect } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Redirect } from "react-router-dom";
 import "./advinfo.css";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
@@ -32,32 +28,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const useStyles1 = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
-
 const Category = ({ icons }) => {
-  const history = useHistory()
-
-	const state = useSelector((statetree) => {
-		return {
-		  token: statetree.token.token,
-		  parsedToken: statetree.token.parsedToken,
-		};
-	});
-
-
-
-
-
-
-
+  const state = useSelector((statetree) => {
+    return {
+      token: statetree.token.token,
+      parsedToken: statetree.token.parsedToken,
+    };
+  });
 
   const [back, setBack] = useState(null);
 
@@ -73,16 +50,13 @@ const Category = ({ icons }) => {
   const [location, setLocation] = useState();
   const [sub_category_id, setSubcategoryid] = useState();
 
-  
-  
-
   /* Upload Image *********************************************************************/
   const [file, setFile] = useState();
   const [error, setError] = useState();
 
   const [images, setImages] = useState([]);
   const [fiveImages, setFiveImages] = useState(false);
-  const [toMyadv , setToMyAdv] = useState(false)
+  const [toMyadv, setToMyAdv] = useState(false);
 
   const types = ["image/png", "image/jpeg"];
 
@@ -104,12 +78,9 @@ const Category = ({ icons }) => {
   const clearImage = (e) => {
     const arr = [...images];
     arr.splice(e.target.id, 1);
-    console.log(e.target.id);
     setImages([...arr]);
     setFiveImages(false);
   };
-
-  
 
   const placeAd = () => {
     if (!title) {
@@ -141,19 +112,17 @@ const Category = ({ icons }) => {
         .post("http://localhost:5000/advertisement/create", {
           title,
           description,
-          image : images[0],
+          image: images[0],
           price,
           phone_number,
           location,
           sub_category_id,
-          user_id : jwt.decode(state.token).userId ,
+          user_id: jwt.decode(state.token).userId,
         })
         .then((response) => {
-          setToMyAdv(true)
+          setToMyAdv(true);
           images.forEach((elem) => {
             addImage(response.data.insertId, elem);
-            
-            
           });
         })
         .catch((err) => {
@@ -192,7 +161,7 @@ const Category = ({ icons }) => {
       </div>
 
       <div id="subcat_icons">
-        {icons.map((elem, i) => {
+        {JSON.parse(localStorage.getItem("icons")).map((elem, i) => {
           return (
             <Iconcard
               onClick={(e) => {
@@ -404,7 +373,7 @@ const Category = ({ icons }) => {
           </Grid>
         </Grid>
       </div>
-      {toMyadv?<Redirect to="/profile/myads" />:null}
+      {toMyadv ? <Redirect to="/profile/myads" /> : null}
     </div>
   );
 };

@@ -113,8 +113,7 @@ export default function Login({ setRedirect }) {
   return (
     <>
       <form className="login">
-
-      <p id="title" >Login</p> 
+        <p id="title">Login</p>
 
         <TextField
           id="text"

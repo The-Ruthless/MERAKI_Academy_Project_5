@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect , useHistory} from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setToken, setParsedToken } from "../../reducers/token";
+import { setToken } from "../../reducers/token";
 
 import Button from "@material-ui/core/Button";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -28,24 +28,18 @@ const Header = ({ redirect, setRedirect }) => {
       setRedirect("toLogin");
     }
   };
-  // const { REACT_APP_SECRET_KEY } = process.env;
 
- 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
-    // if(token){console.log( jwt.verify(token, 'secretKey'))}
     if (token) {
-      try{
-      if (jwt.verify(token, "secretKey")) {
-        dispatch(setToken(token));
-      }}catch(err){
+      try {
+        if (jwt.verify(token, "secretKey")) {
+          dispatch(setToken(token));
+        }
+      } catch (err) {
         localStorage.clear();
-        history.push("/login")
+        history.push("/login");
       }
-    
-    
-       
-      
     }
   }, []);
 
@@ -53,13 +47,13 @@ const Header = ({ redirect, setRedirect }) => {
     <div className="header">
       <Link style={{ textDecoration: "none" }} to="/">
         <span className="theRuthless">The Ruthless</span>
-      <img
-        style={{ display: "inline" }}
-        className="ruthless"
-        src={ruthless}
-        alt="Ruthless"
+        <img
+          style={{ display: "inline" }}
+          className="ruthless"
+          src={ruthless}
+          alt="Ruthless"
         />
-        </Link>
+      </Link>
       <Button
         variant="contained"
         color="default"
@@ -68,17 +62,27 @@ const Header = ({ redirect, setRedirect }) => {
       >
         Place Your Ad
       </Button>
-      {state.token? (
+      {state.token ? (
         <div className="ob_login">
-        <Link style={{ textDecoration: "none", color: "white" }} to="/Profile">
-        <span className="ob_profile">
-          <AccountCircleIcon id="profile_icon" />
-          My Profile
-        </span>
-        </Link>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/">
-        <span onClick={()=>{dispatch(setToken(''));localStorage.clear();}}>Logout</span>
-        </Link>
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/Profile"
+          >
+            <span className="ob_profile">
+              <AccountCircleIcon id="profile_icon" />
+              My Profile
+            </span>
+          </Link>
+          <Link style={{ textDecoration: "none", color: "white" }} to="/">
+            <span
+              onClick={() => {
+                dispatch(setToken(""));
+                localStorage.clear();
+              }}
+            >
+              Logout
+            </span>
+          </Link>
         </div>
       ) : (
         <div className="ob_login">

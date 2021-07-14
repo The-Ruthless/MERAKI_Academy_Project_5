@@ -2,7 +2,7 @@
   width: 75%;
   text-align: center;
   color: black;
-  border:solid black 1px!important;
+  border: solid black 1px !important;
   border-radius: 5px;
 }
 .search {
@@ -14,16 +14,16 @@
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
-  background-image: url('https://penguinin.com/wp-content/uploads/2018/10/ammanjordan-1536x853.jpg');
+  background-image: url("https://penguinin.com/wp-content/uploads/2018/10/ammanjordan-1536x853.jpg");
   background-size: cover;
 }
-#searchBtn{
+#searchBtn {
   width: 20%;
   height: 45px;
   border-radius: 8px;
   font-size: 18px;
 }
-.searchBarBtn{
+.searchBarBtn {
   background-color: rgba(255, 255, 255, 0.445);
   border-radius: 5px;
   width: 70%;
