@@ -55,4 +55,7 @@ select {
   grid-column-gap: 5%;
   grid-row-gap: 50px;
 }
-
+.MuiPagination-ul{
+  justify-content: center;
+  margin-bottom: 10px!important;
+}
