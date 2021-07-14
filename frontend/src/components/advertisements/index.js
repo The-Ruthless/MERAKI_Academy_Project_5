@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
+import Pagination from "@material-ui/lab/Pagination";
 
 import Search from "../search";
 import Adv from "./adv";
@@ -14,47 +16,104 @@ const Advertisements = ({ category, subCategory, showType }) => {
   const [max, setMax] = useState(999999);
   const [keyword, setKeyword] = useState("%%");
 
+  const [to, setTo] = useState(999999);
+
+  const [advCount, setAdvCount] = useState(1);
+  const pages = Math.ceil(advCount / 9);
+  const [page, setPage] = useState(1);
+  const from = (page - 1) * 9;
+
   const queryThroughWhat = (sortValue) => {
-    if (showType === "all") showSearchSortFilterInAll(sortValue);
-    if (showType === "category") showSearchSortFilterInCategory(sortValue);
-    if (showType === "subCategory")
+    if (showType === "all") {
+      showSearchSortFilterInAll(sortValue);
+      showSearchSortFilterInAllCount(sortValue);
+    }
+    if (showType === "category") {
+      showSearchSortFilterInCategory(sortValue);
+      showSearchSortFilterInCategoryCount(sortValue);
+    }
+    if (showType === "subCategory") {
       showSearchSortFilterInSubCategory(sortValue);
+      showSearchSortFilterInSubCategoryCount(sortValue);
+    }
   };
 
   const showSearchSortFilterInAll = (sort = "published_at DESC") => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/all?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+      url: `http://localhost:5000/advertisements/all?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
-        setAdvertisements(response.data);
         console.log(response.data);
+        setAdvertisements(response.data.advs);
+        // setAdvCount(response.data.count);
       })
       .catch((err) => {
         console.log("ERR: ", err.response);
       });
   };
-
+  const showSearchSortFilterInAllCount = (sort = "published_at DESC") => {
+    //this function is to get the total numebr of results (to use in pagination pages)
+    axios({
+      method: "get",
+      url: `http://localhost:5000/advertisements/all/count?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+    })
+      .then((response) => {
+        // setAdvertisements(response.data.advs);
+        console.log(response);
+        setAdvCount(response.data.count);
+      })
+      .catch((err) => {
+        console.log("ERR: ", err.response);
+      });
+  };
   const showSearchSortFilterInCategory = (sort = "published_at DESC") => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/category?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+      url: `http://localhost:5000/advertisements/category?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
-        setAdvertisements(response.data);
+        console.log(response.data);
+        setAdvertisements(response.data.advs);
       })
       .catch((err) => {
         console.log("ERR: ", err.response);
       });
   };
-
+  const showSearchSortFilterInCategoryCount = (sort = "published_at DESC") => {
+    //this function is to get the total numebr of results (to use in pagination pages)
+    axios({
+      method: "get",
+      url: `http://localhost:5000/advertisements/category/count?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+    })
+      .then((response) => {
+        setAdvCount(response.data.count);
+      })
+      .catch((err) => {
+        console.log("ERR: ", err.response);
+      });
+  };
   const showSearchSortFilterInSubCategory = (sort = "published_at DESC") => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/subCategory?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+      url: `http://localhost:5000/advertisements/subCategory?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
-        setAdvertisements(response.data);
+        setAdvertisements(response.data.advs);
+      })
+      .catch((err) => {
+        console.log("ERR: ", err.response);
+      });
+  };
+  const showSearchSortFilterInSubCategoryCount = (
+    sort = "published_at DESC"
+  ) => {
+    axios({
+      method: "get",
+      url: `http://localhost:5000/advertisements/subCategory/count?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+    })
+      .then((response) => {
+        setAdvCount(response.data.count);
       })
       .catch((err) => {
         console.log("ERR: ", err.response);
@@ -63,7 +122,7 @@ const Advertisements = ({ category, subCategory, showType }) => {
 
   useEffect(() => {
     queryThroughWhat();
-  }, [subCategory]);
+  }, [subCategory, from]);
 
   return (
     <div className="advertisements">
@@ -101,7 +160,11 @@ const Advertisements = ({ category, subCategory, showType }) => {
               id="priceFilterDown"
               placeholder="$$"
               onChange={(e) => {
-                if(e.target.value){setMin(e.target.value)}else{setMin(0)};
+                if (e.target.value) {
+                  setMin(e.target.value);
+                } else {
+                  setMin(0);
+                }
               }}
             />
             <label>to:</label>
@@ -110,7 +173,11 @@ const Advertisements = ({ category, subCategory, showType }) => {
               id="priceFilterUp"
               placeholder="$$"
               onChange={(e) => {
-                if(e.target.value){setMax(e.target.value)}else{setMax(999999)};
+                if (e.target.value) {
+                  setMax(e.target.value);
+                } else {
+                  setMax(999999);
+                }
               }}
             />
           </div>
@@ -152,6 +219,17 @@ const Advertisements = ({ category, subCategory, showType }) => {
             date={elem.published_at}
           />
         ))}
+      </div>
+      <div className="pagination-bar">
+        {" "}
+        <Pagination
+          count={pages}
+          variant="outlined"
+          color="primary"
+          onChange={(e, value) => {
+            setPage(value);
+          }}
+        />
       </div>
     </div>
   );
