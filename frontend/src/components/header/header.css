@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  background-color: #303f9f;
+  background-image: linear-gradient(to right, #303f9f, #363a80, #363563, #333147, #2c2c2c);
   height: 60px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -20,6 +20,11 @@
   top: 10px;
   right: 30px;
   font-weight: bold;
+  background-color: #FFD700;
+}
+#placeAdv:hover{
+  background-color: #fce359;
+
 }
 .ruthless {
   height: 100px;

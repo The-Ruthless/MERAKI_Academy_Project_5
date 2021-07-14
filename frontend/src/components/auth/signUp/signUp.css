@@ -1,3 +1,9 @@
+.registerScreen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .register {
   display: flex;
   flex-direction: column;
@@ -10,7 +16,6 @@
   padding-right: 3%;
   padding-bottom: 5%;
   height: 380px;
-
   border-radius: 10px;
   background-color: #bfc7d900;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -47,4 +52,6 @@
   color: rgb(117, 117, 117);
   border-bottom: solid rgb(117, 117, 117);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 24px;
 }

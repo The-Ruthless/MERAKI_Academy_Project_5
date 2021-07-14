@@ -111,7 +111,7 @@ export default function Login({ setRedirect }) {
     setRedirect("");
   }, []);
   return (
-    <>
+    <div className='loginPage'>
       <form className="login">
         <p id="title">Login</p>
 
@@ -177,6 +177,6 @@ export default function Login({ setRedirect }) {
         ) : null}
       </form>
       {logged ? <Redirect to="/" /> : null}
-    </>
+    </div>
   );
 }
