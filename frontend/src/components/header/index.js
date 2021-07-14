@@ -86,7 +86,7 @@ const Header = ({ redirect, setRedirect }) => {
             <span>Login</span>
           </Link>
           <Link style={{ textDecoration: "none", color: "white" }} to="/signup">
-            <span>Register</span>
+            <span>Sign up</span>
           </Link>
         </div>
       )}

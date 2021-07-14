@@ -5,9 +5,11 @@
   margin: auto;
   width: 25%;
   row-gap: 30px ;
-  padding: 3%;
-  /* padding-bottom: 6%; */
-  height: 300px;
+  padding-top: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 5%;
+  height: 380px;
 
   border-radius: 10px;
   background-color: #bfc7d900;
@@ -24,10 +26,11 @@
 
 
 .Message {
-  /* position: absolute;
-  top: 410px;
-  left: 503px;     */
-  color : red;
+  position: absolute;
+  top: 525px;
+  left: 503px;    
+  color : rgb(194, 18, 18);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0%;
   text-align: center;
 }
@@ -40,3 +43,13 @@
 
 }
   
+#title{
+
+  margin: 0%;
+  padding: 2%;
+  font-weight: bold;
+  color:rgb(117, 117, 117);
+  border-bottom: solid rgb(117, 117, 117);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
