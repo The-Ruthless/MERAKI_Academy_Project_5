@@ -43,6 +43,9 @@ export default function Register() {
   return (
     <div className='registerScreen'>
       <form className="register">
+
+        <p id="title1" >Sign up</p> 
+
         <TextField
           id="text"
           variant="outlined"
@@ -83,13 +86,13 @@ export default function Register() {
           onClick={postUser}
         >
           {" "}
-          Register{" "}
+          Sign up{" "}
         </Button>
 
         {mailErr === true ? (
-          <p className="Message">The Email you've entered already exists</p>
+          <p className="Message1">The Email you've entered already exists</p>
         ) : generalErr === true ? (
-          <p className="Message">
+          <p className="Message1">
             Please fill in all required fields correctly
           </p>
         ) : null}
