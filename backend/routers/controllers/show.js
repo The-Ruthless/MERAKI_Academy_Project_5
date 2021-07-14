@@ -251,6 +251,21 @@ const showMyFavorites = (req, res) => {
   });
 };
 
+
+const showAdvById = (req, res) => {
+  const query = `SELECT *
+  FROM trading_website.advertisements 
+  WHERE id= ${req.params.id}`;
+
+  db.query(query, (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+};
+
+
+
+
 module.exports = {
   showFilterSearchSortAll,
   showFilterSearchSortCategory,
@@ -261,4 +276,5 @@ module.exports = {
   showFilterSearchSortAllCount,
   showFilterSearchSortCategoryCount,
   showFilterSearchSortSubCategoryCount,
+  showAdvById
 };

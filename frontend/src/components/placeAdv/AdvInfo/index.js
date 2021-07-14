@@ -159,7 +159,7 @@ const Category = ({ icons }) => {
 
   const addImage = (id, url) => {
     axios
-      .post("http://localhost:5000/create/image", {
+      .post("http://localhost:5000/Image", {
         image_url: url,
         adv_id: id,
       })
