@@ -107,7 +107,7 @@ const Adv = ({ title, price, location, image, id ,date}) => {
         className="img"
         src={image}
         alt="product photo"
-        width="97%"
+        width="100%"
         height="100%"
         onClick={()=>history.push(`/advertisement/${id}`)}
       />
@@ -120,7 +120,7 @@ const Adv = ({ title, price, location, image, id ,date}) => {
         <IoLocationSharp className="locIcon" /> {location}
       </span>
       <br />
-      <span className="price">{price}&nbsp;JOD</span>
+      <span className="price">{price}&nbsp;JD</span>
       <span className='date'>{timeAgo(date)}</span>
       <span
         className="favBtn"

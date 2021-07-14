@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams,useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -9,7 +9,7 @@ import "./advertisement.css";
 const axios = require("axios");
 
 const Advertisement = () => {
-  const history = useHistory()
+  const history = useHistory();
   const params = useParams();
   const AdvId = params.id;
 
@@ -90,7 +90,6 @@ const Advertisement = () => {
       .get(`http://localhost:5000/getImages/${AdvId}`)
       .then((result) => {
         setImages(result.data);
-        console.log(result.data);
       })
       .catch((err) => {
         throw err;
@@ -107,8 +106,6 @@ const Advertisement = () => {
         throw err;
       });
   };
-
-  
 
   useEffect(() => {
     advInformation();
@@ -170,10 +167,14 @@ const Advertisement = () => {
               Chat with Owner
             </button>
 
-            <button onClick={()=>{history.goBack()}} className="adv_button2">
+            <button
+              onClick={() => {
+                history.goBack();
+              }}
+              className="adv_button2"
+            >
               Back
             </button>
-
           </div>
         </div>
       </div>

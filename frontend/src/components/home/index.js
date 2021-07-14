@@ -9,7 +9,7 @@ import "./home.css";
 
 const axios = require("axios").default;
 
-const Home = ({ setShowType, setCategory, setSubCategory }) => {
+const Home = ({ setShowType, setCategory, setSubCategory,setRedirect }) => {
   const history = useHistory();
   const [last10, setLast10] = useState([]);
 
@@ -28,6 +28,7 @@ const Home = ({ setShowType, setCategory, setSubCategory }) => {
 
   useEffect(() => {
     showLast10();
+    setRedirect('');
   }, []);
 
   return (
