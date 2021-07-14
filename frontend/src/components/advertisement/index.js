@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useHistory } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -9,6 +9,7 @@ import "./advertisement.css";
 const axios = require("axios");
 
 const Advertisement = () => {
+  const history = useHistory()
   const params = useParams();
   const AdvId = params.id;
 
@@ -168,6 +169,11 @@ const Advertisement = () => {
               <ChatIcon id="chat_icon" />
               Chat with Owner
             </button>
+
+            <button onClick={()=>{history.goBack()}} className="adv_button2">
+              Back
+            </button>
+
           </div>
         </div>
       </div>
