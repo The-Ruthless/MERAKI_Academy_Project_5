@@ -50,7 +50,7 @@ const App = () => {
           />
         )}
       />
-      <Route path="/advertisement" render={() => <Advertisement />} />
+      <Route path="/advertisement/:id" render={() => <Advertisement />} />
       <Route path="/Profile" render={() => <Profile />} />
       <Route path="/favorites" render={() => <Favorites />} />
       <Route path="/placeAdv" render={() => <PlaceAdv />} />

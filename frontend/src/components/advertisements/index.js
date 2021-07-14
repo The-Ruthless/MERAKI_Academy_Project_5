@@ -44,7 +44,6 @@ const Advertisements = ({ category, subCategory, showType }) => {
       url: `http://localhost:5000/advertisements/all?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
-        console.log(response.data);
         setAdvertisements(response.data.advs);
         // setAdvCount(response.data.count);
       })

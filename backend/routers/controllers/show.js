@@ -11,7 +11,7 @@ const showFilterSearchSortAll = (req, res) => {
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
-  users.id,
+  advertisements.user_id,
   users.full_name
   FROM trading_website.advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -40,7 +40,7 @@ const showFilterSearchSortAllCount = (req, res) => {
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
-  users.id,
+  advertisements.user_id,
   users.full_name
   FROM trading_website.advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -68,7 +68,7 @@ const showFilterSearchSortCategory = (req, res) => {
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
-  users.id,
+  advertisements.user_id,
   users.full_name
   FROM trading_website.advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -97,7 +97,7 @@ const showFilterSearchSortCategoryCount = (req, res) => {
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
-  users.id,
+  advertisements.user_id,
   users.full_name
   FROM trading_website.advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -126,7 +126,7 @@ const showFilterSearchSortSubCategory = (req, res) => {
     advertisements.published_at,
     sub_categories.sub_category,
     main_categories.main_category,
-    users.id,
+    advertisements.user_id,
     users.full_name
     FROM trading_website.advertisements 
     INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -155,7 +155,7 @@ const showFilterSearchSortSubCategoryCount = (req, res) => {
     advertisements.published_at,
     sub_categories.sub_category,
     main_categories.main_category,
-    users.id,
+    advertisements.user_id,
     users.full_name
     FROM trading_website.advertisements 
     INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -184,7 +184,7 @@ const showByUserId = (req, res) => {
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
-  users.id,
+  advertisements.user_id,
   users.full_name
   FROM trading_website.advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
@@ -210,7 +210,7 @@ const showLastSix = (req, res) => {
   advertisements.published_at,
   sub_categories.sub_category,
   main_categories.main_category,
-  users.id,
+  advertisements.user_id,
   users.full_name
   FROM trading_website.advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id

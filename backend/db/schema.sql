@@ -95,3 +95,13 @@ CREATE TABLE favorites (
   FOREIGN KEY (user_id) REFERENCES users(id),
   FOREIGN KEY (adv_id) REFERENCES advertisements(id)
 );
+
+CREATE TABLE images (
+  id INT AUTO_INCREMENT NOT NULL,
+  is_deleted TINYINT DEFAULT 0,
+  image_url VARCHAR(1000),
+  adv_id INT,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (adv_id) REFERENCES advertisements(id)
+);

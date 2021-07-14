@@ -16,6 +16,9 @@
   margin-top: 5px;
   height: 70%;
 }
+.img:hover{
+  cursor: pointer;
+}
 .favBtn {
   position: absolute;
   right: 8px;
@@ -32,6 +35,7 @@
 .advLink:hover {
   color: #303f9f;
   text-decoration: underline;
+  cursor: pointer;
 }
 .locInfo {
   font-weight: bold;

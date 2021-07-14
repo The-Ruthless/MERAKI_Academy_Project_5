@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -7,7 +8,10 @@ import ChatIcon from "@material-ui/icons/Chat";
 import "./advertisement.css";
 const axios = require("axios");
 
-const Advertisement = ({ advId }) => {
+const Advertisement = () => {
+  const params = useParams();
+  const AdvId = params.id;
+
   const MONTH_NAMES = [
     "January",
     "February",
@@ -80,29 +84,30 @@ const Advertisement = ({ advId }) => {
   const [images, setImages] = useState();
   const [showNum, setShowNum] = useState(false);
 
-  const advInformation = () => {
+  const advImages = () => {
     axios
-      .get("http://localhost:5000/advertisements/info/29")
+      .get(`http://localhost:5000/getImages/${AdvId}`)
       .then((result) => {
-        setAdvInfo(result.data);
-        
+        setImages(result.data);
+        console.log(result.data);
       })
       .catch((err) => {
         throw err;
       });
   };
 
-  const advImages = () => {
+  const advInformation = () => {
     axios
-      .get("http://localhost:5000/getImages/29")
+      .get(`http://localhost:5000/advertisements/info/${AdvId}`)
       .then((result) => {
-        setImages(result.data);
-		
+        setAdvInfo(result.data);
       })
       .catch((err) => {
         throw err;
       });
   };
+
+  
 
   useEffect(() => {
     advInformation();
