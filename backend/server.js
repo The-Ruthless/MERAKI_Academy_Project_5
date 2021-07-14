@@ -23,7 +23,7 @@ app.use(usersRouter);
 app.use(loginRouter);
 app.use("/advertisements", showRouter);
 app.use("/advertisement", adsCreationRouter);
-app.use("/create", addImageRouter);
+app.use("/", addImageRouter);
 
 const PORT = process.env.PORT || 5000;
 
