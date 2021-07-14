@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { IoLocationSharp } from "react-icons/io5";
@@ -11,6 +11,7 @@ const axios = require("axios").default;
 const jwt = require("jsonwebtoken");
 
 const Adv = ({ title, price, location, image, id ,date}) => {
+  const history= useHistory()
   const MONTH_NAMES = [
     "January",
     "February",
@@ -108,11 +109,12 @@ const Adv = ({ title, price, location, image, id ,date}) => {
         alt="product photo"
         width="97%"
         height="100%"
+        onClick={()=>history.push(`/advertisement/${id}`)}
       />
       <br />
-      <Link to="/home" className="advLink">
+      <span className="advLink" onClick={()=>history.push(`/advertisement/${id}`)}>
         {title}
-      </Link>
+      </span>
       <br />
       <span className="locInfo">
         <IoLocationSharp className="locIcon" /> {location}
