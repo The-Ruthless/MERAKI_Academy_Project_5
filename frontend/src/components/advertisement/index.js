@@ -129,7 +129,7 @@ const Advertisement = () => {
             ? images.map((elem) => {
                 return (
                   <SplideSlide>
-                    <img className="jojo" src={elem.image_url} alt="Image 1" />
+                    <img className="jojo" width='700' height='550' src={elem.image_url} alt="Image 1" />
                   </SplideSlide>
                 );
               })
