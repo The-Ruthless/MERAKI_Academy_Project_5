@@ -177,9 +177,10 @@ hr#hr_profile {
 
 #myads_image {
   height: 220px;
-  margin-top: 5px;
+  margin-top: 13px;
   position: absolute;
   left: 0.75%;
+  width: 28%;
 }
 
 #hr_myAds {

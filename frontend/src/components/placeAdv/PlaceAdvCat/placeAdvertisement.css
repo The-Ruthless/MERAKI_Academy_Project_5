@@ -29,6 +29,7 @@ a {
   position: relative;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    
 }
 
 .cate_icons:hover {
@@ -54,7 +55,7 @@ a {
   top: 40px;
 }
 #OM_cat_motors {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   top: 120px;
@@ -69,7 +70,7 @@ a {
   top: 40px;
 }
 #OM_cat_electronics {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   top: 120px;
@@ -82,7 +83,7 @@ a {
   top: 40px;
 }
 #OM_cat_accessoires {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   top: 120px;
@@ -95,7 +96,7 @@ a {
   top: 40px;
 }
 #OM_cat_pets {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   top: 120px;
@@ -108,7 +109,7 @@ a {
   top: 40px;
 }
 #OM_cat_furniture {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   top: 120px;
@@ -121,9 +122,13 @@ a {
   top: 40px;
 }
 #OM_cat_books {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: absolute;
   top: 120px;
   left: 60px;
+}
+
+.ic_color{
+  color:#303f9f;
 }
