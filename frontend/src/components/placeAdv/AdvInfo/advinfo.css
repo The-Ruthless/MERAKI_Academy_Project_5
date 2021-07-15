@@ -83,17 +83,9 @@ textarea::placeholder {
   margin-top: 40px;
 }
 
-#subcat_icons {
-  height: 150px !important;
-  width: 500px !important;
-  display: flex !important;
-  justify-content: center !important;
-  margin-top: 50px !important;
-  cursor: pointer !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 20px !important;
-}
+
+
+
 
 #subcate_icons {
   padding: 50px;
@@ -103,7 +95,7 @@ textarea::placeholder {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #303f9f;
+  border: 1px solid #2C2C2C;
   padding-top: 50px;
   padding-bottom: 30px;
   margin-bottom: 10px;
@@ -111,6 +103,7 @@ textarea::placeholder {
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  border-radius: 5px;
 }
 
 #uploadediv {
@@ -145,17 +138,31 @@ textarea::placeholder {
   border: 0;
 }
 
+#subcat_icons {
+  height: 150px !important;
+  width: 500px !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 50px !important;
+  cursor: pointer !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 20px !important;
+  color:#303f9f;
+}
+
 .subcate_icons {
   height: 120px;
   width: 150px;
-  border: 1px solid #303f9f;
+  border: 1px solid #2C2C2C;
   position: relative;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding-top: 20px;
+  border-radius: 5px;
 }
 
 .subOM_cat_motors {
-  color: black;
+  color:#303f9f;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

@@ -43,7 +43,7 @@ const PlaceAdvCat = ({ setIcons }) => {
             }}
             className="cate_icons"
           >
-            <FontAwesomeIcon id="motors_icon" size="5x" icon="car" />
+            <FontAwesomeIcon className="ic_color" id="motors_icon" size="5x" icon="car" />
             <h2 id="OM_cat_motors">Motors</h2>
           </div>{" "}
         </Link>
@@ -56,7 +56,7 @@ const PlaceAdvCat = ({ setIcons }) => {
             }}
             className="cate_icons"
           >
-            <FontAwesomeIcon id="electronics_icon" size="5x" icon="plug" />
+            <FontAwesomeIcon className="ic_color" id="electronics_icon" size="5x" icon="plug" />
             <h2 id="OM_cat_electronics">Electronics</h2>
           </div>
         </Link>
@@ -65,10 +65,11 @@ const PlaceAdvCat = ({ setIcons }) => {
           <div
             onClick={() => {
               setIcons(accessoires);
+              localStorage.setItem("icons", JSON.stringify(accessoires));
             }}
             className="cate_icons"
           >
-            <FontAwesomeIcon id="accessoires_icon" size="5x" icon="gifts" />
+            <FontAwesomeIcon className="ic_color" id="accessoires_icon" size="5x" icon="gifts" />
             <h2 id="OM_cat_accessoires">Accessoires</h2>
           </div>
         </Link>
@@ -77,10 +78,11 @@ const PlaceAdvCat = ({ setIcons }) => {
           <div
             onClick={() => {
               setIcons(pets);
+              localStorage.setItem("icons", JSON.stringify(pets));
             }}
             className="cate_icons"
           >
-            <FontAwesomeIcon id="pets_icon" size="5x" icon="paw" />
+            <FontAwesomeIcon className="ic_color" id="pets_icon" size="5x" icon="paw" />
             <h2 id="OM_cat_pets">Pets</h2>
           </div>
         </Link>
@@ -89,17 +91,18 @@ const PlaceAdvCat = ({ setIcons }) => {
           <div
             onClick={() => {
               setIcons(furniture);
+              localStorage.setItem("icons", JSON.stringify(furniture));
             }}
             className="cate_icons"
           >
-            <FontAwesomeIcon id="furniture_icon" size="5x" icon="couch" />
-            <h2 id="OM_cat_furniture">Furniture</h2>
+            <FontAwesomeIcon className="ic_color" id="furniture_icon" size="5x" icon="couch" />
+            <h2  id="OM_cat_furniture">Furniture</h2>
           </div>
         </Link>
 
         <div className="cate_icons">
-          <FontAwesomeIcon id="books_icon" size="5x" icon="book" />
-          <h2 id="OM_cat_books">Books</h2>
+          <FontAwesomeIcon className="ic_color" id="books_icon" size="5x" icon="book" />
+          <h2  id="OM_cat_books">Books</h2>
         </div>
       </div>
     </div>
