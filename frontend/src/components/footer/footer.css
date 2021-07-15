@@ -1,6 +1,97 @@
 .footer {
-  height: 100px;
-  background-color: #303f9f;
+  height: 250px;
+  background-color: #2C2C2C;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    display: flex;
+    gap: 5px;
 }
+
+
+#footer_about{
+  width:45%;
+  display: flex;
+  margin-left: 2%;
+  flex-direction: column;
+  
+}
+
+#about_text{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+}
+
+
+#about_para{
+  font-size: 18px;
+  color: white;
+}
+
+#footerIcons{
+  margin-top: 2.5%;
+  height: 50px;
+}
+
+
+.footer_icon{
+  font-size: 50px;
+  color:white;
+  
+}
+
+
+
+#footer_info{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  justify-content: center;
+  
+}
+
+.footerInfo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.footer_info_icon{
+  font-size: 38px;
+  color:white;
+}
+
+.footer_info_text{
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+#footer_logo{
+  
+  width: 40%;
+  display: flex;
+}
+
+
+#footer_logo_text{
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+  margin-right: 2%;
+  justify-content: center;
+}
+
+
+#logo_footer{
+  margin-top: 6%;
+}
+
