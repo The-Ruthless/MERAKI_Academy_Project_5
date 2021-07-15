@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoArrowRight } from "react-icons/go";
 import Button from "@material-ui/core/Button";
 import Adv from "../advertisements/adv";
 
+import homeSvg from "./home.svg";
 import "./home.css";
 
 const axios = require("axios").default;
 
-const Home = ({ setShowType, setCategory, setSubCategory,setRedirect }) => {
+const Home = ({ setShowType, setCategory, setSubCategory, setRedirect }) => {
   const history = useHistory();
   const [last10, setLast10] = useState([]);
 
@@ -28,30 +29,33 @@ const Home = ({ setShowType, setCategory, setSubCategory,setRedirect }) => {
 
   useEffect(() => {
     showLast10();
-    setRedirect('');
+    setRedirect("");
   }, []);
 
   return (
     <div className="home">
       <div className="explore">
-        <br />
-        <br />
-        <br />
-        <h1 className="welcome">
-          Welcome to our website .. the convenient trading place
-        </h1>
-        <br />
-        <Button
-          variant="contained"
-          color="primary"
-          className="welcomeBtn"
-          onClick={() => {
-            setShowType("all");
-            history.push("/advertisements");
-          }}
-        >
-          Explore &nbsp; <GoArrowRight className="exploreArrow" />
-        </Button>
+        <div className="main_welcome flex_item flex_item_1">
+          <h2 className="welcome">Advertise With Us</h2>
+          <p>
+            We are a trading website where who you can advertise some
+            categories with us such as :Furniture, Motors, Electornics and
+            more...
+          </p>
+          <Button
+            variant="contained"
+            color="primary"
+            className="welcomeBtn"
+            onClick={() => {
+              setShowType("all");
+              history.push("/advertisements");
+            }}
+          >
+            Explore &nbsp; <GoArrowRight className="exploreArrow" />
+          </Button>
+        </div>
+
+        <img alt="welcome_photo" src={homeSvg} className="flex_item" />
       </div>
       <div id="ob_cat_icons">
         <div
@@ -120,22 +124,24 @@ const Home = ({ setShowType, setCategory, setSubCategory,setRedirect }) => {
           <p className="iconName">Furniture</p>
         </div>
       </div>
-      <h2 className="recentWord" style={{ display: "inline" }}>
-        Recently added advertisements
-      </h2>
-      <hr className="style-two" />
-      <div className="recent">
-        {last10.map((elem, i) => (
-          <Adv
-            key={i}
-            id={elem.id}
-            image={elem.image}
-            title={elem.title}
-            price={elem.price}
-            location={elem.location}
-            date={elem.published_at}
-          />
-        ))}
+      <div className="recent_area">
+        <h2 className="recentWord" style={{ display: "inline" }}>
+          Recently added advertisements
+        </h2>
+        <hr className="style-two" />
+        <div className="recent">
+          {last10.map((elem, i) => (
+            <Adv
+              key={i}
+              id={elem.id}
+              image={elem.image}
+              title={elem.title}
+              price={elem.price}
+              location={elem.location}
+              date={elem.published_at}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
