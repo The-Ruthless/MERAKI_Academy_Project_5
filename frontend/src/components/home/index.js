@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import Adv from "../advertisements/adv";
 
 import homeSvg from "./home.svg";
-import shadow from "./shadow2.svg";
+import shadow from "./shadow.svg";
 import "./home.css";
 
 const axios = require("axios").default;
@@ -129,7 +129,6 @@ const Home = ({ setShowType, setCategory, setSubCategory, setRedirect }) => {
         <h2 className="recentWord" style={{ display: "inline" }}>
           Recently added advertisements
         </h2>
-        {/* <hr className="style-two" /> */}
         <div className="recent">
           {last10.map((elem, i) => (
             <Adv
