@@ -45,7 +45,7 @@ const Header = ({ redirect, setRedirect }) => {
 
   return (
     <div className="header">
-      <Link style={{ textDecoration: "none" }} to="/">
+      <Link style={{ textDecoration: "none" }} to="/" className='logo'>
         <span className="theRuthless">The Ruthless</span>
         <img
           style={{ display: "inline" }}
