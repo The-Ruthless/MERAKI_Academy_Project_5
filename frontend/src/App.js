@@ -13,8 +13,6 @@ import Profile from "./components/profile";
 import PlaceAdv from "./components/placeAdv/placeadv";
 import Login from "./components/auth/login";
 import Signup from "./components/auth/signUp";
-import Chat from "./components/chat/Chat"
-import { ContactsProvider } from './contexts/ContactsProvider'
 
 const App = () => {
   const [showType, setShowType] = useState("all");
@@ -52,7 +50,7 @@ const App = () => {
           />
         )}
       />
-      <Route path="/advertisement/:id" render={() => <ContactsProvider><Advertisement /></ContactsProvider>} />
+      <Route path="/advertisement/:id" render={() => <Advertisement />} />
       <Route path="/Profile" render={() => <Profile />} />
       <Route
         path="/placeAdv"
@@ -63,7 +61,6 @@ const App = () => {
         path="/signup"
         render={() => <Signup setRedirect={setRedirect} />}
       />
-      <Route path="/chat" render={() => <Chat />} />
       <Footer />
     </div>
   );

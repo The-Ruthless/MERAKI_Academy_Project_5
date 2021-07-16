@@ -31,6 +31,7 @@ const Home = ({ setShowType, setCategory, setSubCategory, setRedirect }) => {
   useEffect(() => {
     showLast10();
     setRedirect("");
+    
   }, []);
 
   return (

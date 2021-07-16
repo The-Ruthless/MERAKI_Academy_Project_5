@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useStorage } from "../../../hooks/useStorage";
+import useStorage from "../../../hooks/useStorage";
 import "./advinfo.css";
 
 function ProgressBar({ file, setFile, setImages, images }) {
