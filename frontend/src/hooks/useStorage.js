@@ -6,7 +6,7 @@ import {
 } from "../firebase/config.js";
 const axios = require("axios");
 
-const useStorage = (file) => {
+export const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
@@ -34,4 +34,24 @@ const useStorage = (file) => {
   return { progress, url, error };
 };
 
-export default useStorage;
+const PREFIX = 'chat-box-'
+
+export function useLocalStorage(key, initialValue) {
+  const prefixedKey = PREFIX + key
+  const [value, setValue] = useState(() => {
+    const jsonValue = localStorage.getItem(prefixedKey)
+    if (jsonValue != null) return JSON.parse(jsonValue)
+    if (typeof initialValue === 'function') {
+      return initialValue()
+    } else {
+      return initialValue
+    }
+  })
+
+  useEffect(() => {
+    localStorage.setItem(prefixedKey, JSON.stringify(value))
+  }, [prefixedKey, value])
+
+  return [value, setValue]
+}
+
