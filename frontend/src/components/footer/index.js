@@ -13,7 +13,7 @@ const Footer = () => {
 			<p id="about_text">About The Company</p>
 			<p id="about_para">The Ruthless.com  is the leading classifieds website for users in Jordan .
 			 Its has become the number one platform for users to buy, sell, or find anything in their community.
-			  A community where underused goods are redistributed to fill a new need, and become wanted again.</p>
+			  </p>
 
 			<div id="footerIcons">
 				<FaFacebookSquare className="footer_icon" />

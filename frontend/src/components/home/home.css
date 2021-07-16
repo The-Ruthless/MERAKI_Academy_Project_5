@@ -22,7 +22,6 @@
   text-shadow: -1px 1px 0 #5757576c, 1px 1px 0 #5352526e;
   margin-left: auto;
   margin-right: auto;
-
   margin: 0;
 }
 .welcomeBtn {
@@ -40,6 +39,7 @@
 }
 
 #ob_cat_icons {
+  /* background-color: rgb(238, 238, 238); */
   display: grid;
   grid-template-columns: 150px 150px 150px;
   grid-template-rows: 150px 150px;
@@ -86,7 +86,7 @@
   margin: 0px;
   font-weight: bold;
   font-size: 19px;
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .style-two {
   border: 0;
