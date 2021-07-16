@@ -115,6 +115,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
   useEffect(() => {
     queryThroughWhat();
     setRedirect();
+    window.scrollTo(0, 400);
   }, [subCategory, from]);
 
   return (
