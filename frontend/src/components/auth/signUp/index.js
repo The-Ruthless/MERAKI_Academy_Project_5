@@ -99,6 +99,7 @@ export default function Register({setRedirect}) {
           </p>
         ) : null}
       </form>
+      {success?<Redirect to="/login" />:null}
     </div>
   );
 }

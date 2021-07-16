@@ -32,6 +32,7 @@ const MyAds = () => {
 
   useEffect(() => {
     getUserAds();
+    window.scrollTo(0, 0);
   }, []);
 
   return (
