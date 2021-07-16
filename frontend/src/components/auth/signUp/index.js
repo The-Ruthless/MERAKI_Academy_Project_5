@@ -20,7 +20,6 @@ export default function Register({setRedirect}) {
   const postUser = () => {
     setMailErr(false);
     setGeneralErr(false);
-    setSuccess(false);
     axios
       .post(`http://localhost:5000/register`, {
         email: email,
@@ -28,16 +27,18 @@ export default function Register({setRedirect}) {
         full_name: full_name,
       })
       .then((response) => {
+        
         if (response.data.errno === 1062) {
           setMailErr(true);
         } else {
           if (response.data === "passOrMailError") {
             setGeneralErr(true);
-          }
-          setSuccess(true);
+          }else{setSuccess(true);}
+          // setSuccess(true);
         }
       })
       .catch((error) => {
+        console.log("HIII Fucker")
         alert("Please connect to the right host");
       });
   };
