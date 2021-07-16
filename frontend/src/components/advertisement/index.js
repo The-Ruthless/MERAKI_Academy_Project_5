@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Redirect } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import PhoneIcon from "@material-ui/icons/Phone";
 import ChatIcon from "@material-ui/icons/Chat";
 import "./advertisement.css";
+import { useContacts } from '../../contexts/ContactsProvider'
 const axios = require("axios");
 
 const Advertisement = () => {
   const history = useHistory();
   const params = useParams();
   const AdvId = params.id;
+  const [toChat, setToChat] = useState(false);
+  const { createContact } = useContacts()
 
   const MONTH_NAMES = [
     "January",
@@ -101,6 +104,7 @@ const Advertisement = () => {
       .get(`http://localhost:5000/advertisements/info/${AdvId}`)
       .then((result) => {
         setAdvInfo(result.data);
+        console.log(result.data)
       })
       .catch((err) => {
         throw err;
@@ -111,6 +115,11 @@ const Advertisement = () => {
     advInformation();
     advImages();
   }, []);
+
+
+  const createCont = ()=>{
+    createContact(String(advInfo[0].user_id), "Omar")
+  }
 
   return (
     <div className="advPage">
@@ -164,10 +173,11 @@ const Advertisement = () => {
                 : "Show Phone Number"}
             </button>
 
-            <button className="adv_button2">
+            <button onClick={()=> {setToChat(true);createCont()}} className="adv_button2">
               <ChatIcon id="chat_icon" />
-              Chat with Owner
+              Add to contacts 
             </button>
+            {toChat?<Redirect to="/chat"/>:null}
 
             <button
               onClick={() => {
