@@ -24,7 +24,7 @@
   background-color: #FFD700;
 }
 #placeAdv:hover{
-  background-color: #fce359;
+  background-color: #fff1a4;
 
 }
 .ruthless {
@@ -52,10 +52,10 @@
 }
 .ob_login span:hover {
   cursor: pointer;
-  color: black;
+  color: #FFD700;
 }
 .ob_profile:hover {
   cursor: pointer;
-  color: black;
+  color: #FFD700;
 }
 .logo{margin-left: 15px;}

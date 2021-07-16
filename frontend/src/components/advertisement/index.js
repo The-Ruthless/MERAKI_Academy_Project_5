@@ -129,7 +129,7 @@ const Advertisement = () => {
             ? images.map((elem) => {
                 return (
                   <SplideSlide>
-                    <img className="jojo" src={elem.image_url} alt="Image 1" />
+                    <img className="jojo" width='700' height='550' src={elem.image_url} alt="Image 1" />
                   </SplideSlide>
                 );
               })
@@ -137,14 +137,16 @@ const Advertisement = () => {
         </Splide>
 
         <div id="advTitleDiv">
-          <h1 id="advTitle">{advInfo ? advInfo[0].title : null}</h1>
-          <span id="timing">
+          <span id="advTitle">{advInfo ? advInfo[0].title : null}</span>
+          <br/>
+          <br/>
+          <div id="timing">
             <AccessTimeIcon id="time_icons" />
-            <p id="advDate">
+            <span id="advDate">
               {advInfo ? timeAgo(advInfo[0].published_at) : null}
-            </p>
-          </span>
-          <h2 id="adv_price">{advInfo ? advInfo[0].price : null} JD</h2>
+            </span>
+          </div>
+          <span id="adv_price">{advInfo ? advInfo[0].price : null} JD</span>
           <div id="button_div">
             <button
               onClick={() => {

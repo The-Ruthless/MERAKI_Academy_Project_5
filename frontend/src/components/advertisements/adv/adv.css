@@ -14,7 +14,7 @@
   border-top-left-radius: 5px;
   height: 70%;
 }
-.img:hover{
+.img:hover {
   cursor: pointer;
 }
 .favBtn {
@@ -64,6 +64,5 @@
 .date {
   position: relative;
   bottom: 12px;
-  font-family: sans-serif;
   font-size: 13px;
 }
