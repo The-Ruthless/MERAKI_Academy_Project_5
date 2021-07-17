@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const db = require("./db/db");
+const path = require('path');
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.use(express.json());
 
 //third-party middleware
 app.use(cors());
+
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 //app routers
 app.use(usersRouter);

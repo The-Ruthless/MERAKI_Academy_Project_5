@@ -70,7 +70,7 @@ FOREIGN KEY (main_category_id) REFERENCES main_categories(id)
 CREATE TABLE advertisements(
   id INT AUTO_INCREMENT NOT NULL,
   is_deleted TINYINT DEFAULT 0,
-  published_at DATETIME DEFAULT CURRENT_TIMESTAMP ,
+  published_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   title VARCHAR(255),
   description TEXT(5000),
   image VARCHAR(1000),
