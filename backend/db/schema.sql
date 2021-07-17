@@ -73,7 +73,7 @@ CREATE TABLE advertisements(
   published_at DATETIME DEFAULT CURRENT_TIMESTAMP ,
   title VARCHAR(255),
   description TEXT(5000),
-  image VARCHAR(255),
+  image VARCHAR(1000),
   price INT,
   phone_number VARCHAR(255),
   location VARCHAR(255),

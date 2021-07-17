@@ -70,7 +70,7 @@ const Header = ({ redirect, setRedirect }) => {
           >
             <span className="ob_profile">
               <AccountCircleIcon id="profile_icon" />
-              My Profile
+              {jwt.decode(state.token).full_name.split(' ')[0]}
             </span>
           </Link>
           <Link style={{ textDecoration: "none", color: "white" }} to="/">
