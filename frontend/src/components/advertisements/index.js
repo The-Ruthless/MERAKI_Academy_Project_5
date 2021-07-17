@@ -124,7 +124,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
       <div className="filterBar">
         <form style={{ display: "inline" }} className="filterArea">
           <div style={{ display: "inline" }}>
-            <label>Location:</label>
+            <label>Location:&nbsp;</label>
             <select
               name="location"
               defaultValue="%%"
@@ -148,7 +148,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
             </select>
           </div>
           <div className="priceFilter" style={{ display: "inline" }}>
-            <label>Price from:</label>
+            <label>from: &nbsp;</label>
             <input
               type="number"
               id="priceFilterDown"
@@ -161,7 +161,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
                 }
               }}
             />
-            <label>to:</label>
+            <label>&nbsp;to:&nbsp;</label>
             <input
               type="number"
               id="priceFilterUp"
@@ -185,7 +185,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
           </Button>
         </form>
         <form className="sort" style={{ display: "inline" }}>
-          <label>Sort:</label>
+          <label>Sort:&nbsp;</label>
           <select
             name="sort"
             id="sort"

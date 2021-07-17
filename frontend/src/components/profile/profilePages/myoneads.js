@@ -16,7 +16,7 @@ const MyOneAds = ({ title, image, price, location, date, id }) => {
 
       <h2
         id="myads_title"
-        className="advLink"
+        className="om_advLink"
         onClick={() => history.push(`/advertisement/${id}`)}
       >
         {title}
