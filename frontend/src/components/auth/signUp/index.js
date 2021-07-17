@@ -21,7 +21,7 @@ export default function Register({setRedirect}) {
     setMailErr(false);
     setGeneralErr(false);
     axios
-      .post(`http://localhost:5000/register`, {
+      .post(`${process.env.REACT_APP_BACKEND_SERVER}register`, {
         email: email,
         password: password,
         full_name: full_name,

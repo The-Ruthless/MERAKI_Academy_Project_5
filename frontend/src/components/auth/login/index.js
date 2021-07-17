@@ -52,7 +52,7 @@ export default function Login({ setRedirect }) {
     setLoginResult(undefined);
     axios({
       method: "post",
-      url: "http://localhost:5000/login",
+      url: `${process.env.REACT_APP_BACKEND_SERVER}login`,
       data: { email, password: values.password },
     })
       .then((response) => {
@@ -76,7 +76,7 @@ export default function Login({ setRedirect }) {
     setLoginResult(undefined);
     axios({
       method: "post",
-      url: "http://localhost:5000/login",
+      url: `${process.env.REACT_APP_BACKEND_SERVER}login`,
       data: { email: response.profileObj.email, password: "google0000" },
     })
       .then((result) => {
@@ -87,7 +87,7 @@ export default function Login({ setRedirect }) {
       .catch((err) => {
         if (err.response.status === 400) {
           axios
-            .post(`http://localhost:5000/register`, {
+            .post(`${process.env.REACT_APP_BACKEND_SERVER}register`, {
               email: response.profileObj.email,
               password: "google0000",
               full_name: response.profileObj.name,

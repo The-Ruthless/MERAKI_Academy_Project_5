@@ -87,7 +87,7 @@ const Advertisement = () => {
 
   const advImages = () => {
     axios
-      .get(`http://localhost:5000/getImages/${AdvId}`)
+      .get(`${process.env.REACT_APP_BACKEND_SERVER}getImages/${AdvId}`)
       .then((result) => {
         setImages(result.data);
       })
@@ -98,7 +98,7 @@ const Advertisement = () => {
 
   const advInformation = () => {
     axios
-      .get(`http://localhost:5000/advertisements/info/${AdvId}`)
+      .get(`${process.env.REACT_APP_BACKEND_SERVER}advertisements/info/${AdvId}`)
       .then((result) => {
         setAdvInfo(result.data);
       })

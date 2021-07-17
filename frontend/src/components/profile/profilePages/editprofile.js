@@ -28,7 +28,7 @@ const EditProfile = () => {
 
   const updateUserInform = () => {
     axios
-      .put("http://localhost:5000/register/1", {
+      .put(`${process.env.REACT_APP_BACKEND_SERVER}register/1`, {
         full_name,
         age,
         gender,

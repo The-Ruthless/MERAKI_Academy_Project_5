@@ -18,7 +18,7 @@ const Home = ({ setShowType, setCategory, setSubCategory, setRedirect }) => {
   const showLast10 = () => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/lasttwenty`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/lasttwenty`,
     })
       .then((response) => {
         setLast10(response.data);
@@ -31,7 +31,7 @@ const Home = ({ setShowType, setCategory, setSubCategory, setRedirect }) => {
   useEffect(() => {
     showLast10();
     setRedirect("");
-    
+    console.log(process.env.REACT_APP_BACKEND_SERVER);
   }, []);
 
   return (

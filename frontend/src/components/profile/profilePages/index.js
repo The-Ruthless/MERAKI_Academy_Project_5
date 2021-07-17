@@ -21,7 +21,7 @@ const MyProfile = () => {
     if (state.token) {
       const userToken = jwt.decode(state.token);
       axios
-        .get(`http://localhost:5000/profile/${userToken.userId}`)
+        .get(`${process.env.REACT_APP_BACKEND_SERVER}profile/${userToken.userId}`)
         .then((result) => {
           setUserInform(result.data[0]);
           localStorage.setItem("userInform", JSON.stringify(result.data[0]));
