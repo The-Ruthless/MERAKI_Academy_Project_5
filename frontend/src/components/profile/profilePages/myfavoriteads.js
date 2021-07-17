@@ -21,7 +21,7 @@ const MyfavoriteAds = () => {
 
       axios
         .get(
-          `http://localhost:5000/advertisements/favorites/${userToken.userId}`
+          `${process.env.REACT_APP_BACKEND_SERVER}advertisements/favorites/${userToken.userId}`
         )
         .then((result) => {
           setUserFavorAds(result.data);

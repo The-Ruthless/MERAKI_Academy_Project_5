@@ -38,7 +38,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
   const showSearchSortFilterInAll = (sort = "published_at DESC") => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/all?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/all?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
         setAdvertisements(response.data.advs);
@@ -51,7 +51,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
     //this function is to get the total numebr of results (to use in pagination pages)
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/all/count?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/all/count?location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
     })
       .then((response) => {
         setAdvCount(response.data.count);
@@ -63,7 +63,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
   const showSearchSortFilterInCategory = (sort = "published_at DESC") => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/category?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/category?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
         setAdvertisements(response.data.advs);
@@ -76,7 +76,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
     //this function is to get the total numebr of results (to use in pagination pages)
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/category/count?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/category/count?category=${category}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
     })
       .then((response) => {
         setAdvCount(response.data.count);
@@ -88,7 +88,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
   const showSearchSortFilterInSubCategory = (sort = "published_at DESC") => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/subCategory?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/subCategory?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}&from=${from}`,
     })
       .then((response) => {
         setAdvertisements(response.data.advs);
@@ -102,7 +102,7 @@ const Advertisements = ({ category, subCategory, showType, setRedirect }) => {
   ) => {
     axios({
       method: "get",
-      url: `http://localhost:5000/advertisements/subCategory/count?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisements/subCategory/count?subCategory=${subCategory}&location=${location}&min=${min}&max=${max}&sortOrder=${sort}&keyword=${keyword}`,
     })
       .then((response) => {
         setAdvCount(response.data.count);

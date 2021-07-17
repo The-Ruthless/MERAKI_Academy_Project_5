@@ -109,7 +109,7 @@ const Category = ({ icons }) => {
 
     if (title && price && phone_number && location) {
       axios
-        .post("http://localhost:5000/advertisement/create", {
+        .post(`${process.env.REACT_APP_BACKEND_SERVER}advertisement/create`, {
           title,
           description,
           image: images[0],
@@ -133,7 +133,7 @@ const Category = ({ icons }) => {
 
   const addImage = (id, url) => {
     axios
-      .post("http://localhost:5000/Image", {
+      .post(`${process.env.REACT_APP_BACKEND_SERVER}Image`, {
         image_url: url,
         adv_id: id,
       })

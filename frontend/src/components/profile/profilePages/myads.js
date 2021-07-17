@@ -20,7 +20,7 @@ const MyAds = () => {
       const userToken = jwt.decode(state.token);
 
       axios
-        .get(`http://localhost:5000/advertisements/user/${userToken.userId}`)
+        .get(`${process.env.REACT_APP_BACKEND_SERVER}advertisements/user/${userToken.userId}`)
         .then((result) => {
           setUserAds(result.data);
         })

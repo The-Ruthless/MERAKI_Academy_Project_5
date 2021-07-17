@@ -91,7 +91,7 @@ const Adv = ({ title, price, location, image, id ,date}) => {
   const addToFavorites = (adv_id) => {
     axios({
       method: "post",
-      url: "http://localhost:5000/advertisement/favorite",
+      url: `${process.env.REACT_APP_BACKEND_SERVER}advertisement/favorite`,
       data: { user_id: jwt.decode(state.token).userId, adv_id: adv_id },
     })
       .then((response) => {
