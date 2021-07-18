@@ -25,7 +25,7 @@ const addImage = (req, res) => {
 
 const getImages = (req, res) => {
   const adv_id = req.params.id
-   const query = `SELECT image_url FROM trading_website.images WHERE adv_id = ${adv_id};`;
+   const query = `SELECT image_url FROM images WHERE adv_id = ${adv_id};`;
  
    db.query(query,(err, result) => {
      if (err) throw err;

@@ -13,7 +13,7 @@ const showFilterSearchSortAll = (req, res) => {
   main_categories.main_category,
   advertisements.user_id,
   users.full_name
-  FROM trading_website.advertisements 
+  FROM advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
@@ -42,7 +42,7 @@ const showFilterSearchSortAllCount = (req, res) => {
   main_categories.main_category,
   advertisements.user_id,
   users.full_name
-  FROM trading_website.advertisements 
+  FROM advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
@@ -70,7 +70,7 @@ const showFilterSearchSortCategory = (req, res) => {
   main_categories.main_category,
   advertisements.user_id,
   users.full_name
-  FROM trading_website.advertisements 
+  FROM advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
@@ -99,7 +99,7 @@ const showFilterSearchSortCategoryCount = (req, res) => {
   main_categories.main_category,
   advertisements.user_id,
   users.full_name
-  FROM trading_website.advertisements 
+  FROM advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
@@ -128,7 +128,7 @@ const showFilterSearchSortSubCategory = (req, res) => {
     main_categories.main_category,
     advertisements.user_id,
     users.full_name
-    FROM trading_website.advertisements 
+    FROM advertisements 
     INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
     INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
     INNER JOIN users ON advertisements.user_id= users.id
@@ -157,7 +157,7 @@ const showFilterSearchSortSubCategoryCount = (req, res) => {
     main_categories.main_category,
     advertisements.user_id,
     users.full_name
-    FROM trading_website.advertisements 
+    FROM advertisements 
     INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
     INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
     INNER JOIN users ON advertisements.user_id= users.id
@@ -186,7 +186,7 @@ const showByUserId = (req, res) => {
   main_categories.main_category,
   advertisements.user_id,
   users.full_name
-  FROM trading_website.advertisements 
+  FROM advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
@@ -212,7 +212,7 @@ const showLastSix = (req, res) => {
   main_categories.main_category,
   advertisements.user_id,
   users.full_name
-  FROM trading_website.advertisements 
+  FROM advertisements 
   INNER JOIN sub_categories ON advertisements.sub_category_id= sub_categories.id
   INNER JOIN main_categories ON sub_categories.main_category_id= main_categories.id
   INNER JOIN users ON advertisements.user_id= users.id
@@ -254,7 +254,7 @@ const showMyFavorites = (req, res) => {
 
 const showAdvById = (req, res) => {
   const query = `SELECT *
-  FROM trading_website.advertisements 
+  FROM advertisements 
   WHERE id= ${req.params.id}`;
 
   db.query(query, (err, result) => {
