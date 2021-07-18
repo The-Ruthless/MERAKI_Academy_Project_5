@@ -51,7 +51,7 @@ const editUser = async (req, res) => {
 
 const userInform = (req,res)=>{
   const query = `SELECT 
-  full_name,age,gender,phone_number,current_location,nationality FROM trading_website.users Where id = ${req.params.id};`
+  full_name,age,gender,phone_number,current_location,nationality FROM users Where id = ${req.params.id};`
   //http://localhost:5000/profile/1
 
   db.query(query, (err, result) => {
